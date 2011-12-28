@@ -1,0 +1,313 @@
+ '12/05/2010; variables added / changed, Whisker(touch) added
+ '12/08/2010; ReadLight code changed for better scaling
+
+'%%section:Preamble
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+'BotBrain include code version 2010.12.30
+'%%heading:Pin Definitions
+Program         PIN 0
+LWhisker        PIN 1
+RWhisker        PIN 2
+LightLeft       PIN 3
+LightRight      PIN 4
+ObsTxLeft       PIN 5  'IR Sensor
+ObsRxLeft       PIN 6  'IR Sensor
+ObsTxRight      PIN 7  'IR Sensor
+ObsRxRight      PIN 8  'IR Sensor
+Servo1          PIN 9
+Servo2          PIN 10
+Servo3          PIN 11
+MotorLeft       PIN 12
+MotorRight      PIN 13
+TripDrain       PIN 14
+Speaker         PIN 15
+'---[Pin Initializations]------------------------------------------------------
+OUTS = %0000000111100111   'NOTE: pin order is reversed. Pin 15 is first, Pin 0 is last
+DIRS = %1111111000011000   'Set to turn lights off in 3&4 at startup
+
+
+
+'%%heading:Global Variables
+
+ScrW0           VAR W0
+ScrW1           VAR W1
+
+ScrB0           VAR ScrW0.LOWBYTE
+ScrB1           VAR ScrW0.HIGHBYTE
+ScrB2           VAR ScrW1.LOWBYTE
+ScrB3           VAR ScrW1.HIGHBYTE
+
+ScrN0           VAR ScrB0.LOWNIB
+ScrN1           VAR ScrB0.HIGHNIB
+ScrN2           VAR ScrB1.LOWNIB
+ScrN3           VAR ScrB1.HIGHNIB
+
+ScrT0           VAR ScrB3.BIT0
+ScrT1           VAR ScrB3.BIT1
+ScrT2           VAR ScrB3.BIT2
+ScrT3           VAR ScrB3.BIT3
+ScrT4           VAR ScrB3.BIT4
+ScrT5           VAR ScrB3.BIT5
+ScrT6           VAR ScrB3.BIT6
+ScrT7           VAR ScrB3.BIT7
+
+Moves           VAR ScrB0
+
+MoveRight       VAR ScrB0
+MoveLeft        VAR ScrB1
+MoveTime        VAR ScrB2
+
+CoinFlip        VAR W2
+
+Lights          VAR B6
+
+RightLight      VAR B6
+LeftLight       VAR B7
+
+Readout         VAR W3  'for debugging purposes
+leftstop        VAR B8
+rightstop       VAR B9
+
+Counter0        VAR B10
+Counter1        VAR B11
+Counter2        VAR B12
+Counter3        VAR B13
+Counter4        VAR B14
+Counter5        VAR B15
+
+ResetCount      VAR B16.NIB0   'Was ScrN0. Changed for persistence.
+
+Reserved0       VAR B16.NIB1
+
+Counter6        VAR B17
+Counter7        VAR B18
+
+Motors          VAR B19
+
+RightMotor      VAR B19    'byte
+LeftMotor       VAR B20    'byte
+
+LineCount       VAR B21.HIGHNIB
+ObstacleCount   VAR B21.LOWNIB
+
+LeftLine        VAR B22.BIT3
+RightLine       VAR B22.BIT2
+
+LeftObstacle    VAR B22.BIT1
+RightObstacle   VAR B22.BIT0
+
+Flags           VAR B23
+
+Flag_green      VAR Flags.BIT7
+Flag_yellow     VAR Flags.BIT6
+Flag_orange     VAR Flags.BIT5
+Flag_red        VAR Flags.BIT4
+Flag_magenta    VAR Flags.BIT3
+Flag_purple     VAR Flags.BIT2
+Flag_blue       VAR Flags.BIT1
+Stalled         VAR Flags.BIT0
+
+LeftWhiskerObstacle VAR B24.BIT3
+RightWhiskerObstacle VAR B24.BIT2
+WhiskerObstacleCount VAR B25.LOWNIB
+
+irFreq               VAR B25.HIGHNIB
+'%%heading:Protect Calibration DATA in EEPROM
+  DATA @0, (16)
+'%%heading:COUNT Reset BUTTON Presses
+'  READ 15, ResetCount
+'  WRITE 15, ResetCount + 1 MAX 15
+'  PAUSE 500
+'  WRITE 15, 0
+'%%heading:Variable Initialization
+LeftMotor = 128
+RightMotor = 128
+
+'+++++++++++==Tripdrain++++++++++
+  HIGH 14
+  PAUSE 5
+  LOW 14
+
+'%%heading:Check Calibration Values and Repair
+'FOR ScrN1 = 0 TO 4 STEP 4
+ ' ScrB1 = 0
+'  FOR ScrB2 = ScrN1 TO ScrN1 + 3
+'    READ ScrB2, ScrB3
+'    ScrB1 = ScrB1 + ScrB3
+'  NEXT
+'  IF (ScrB1) THEN
+'    FOR ScrB2 = ScrN1 TO ScrN1 + 3
+'      WRITE ScrB2, 128 << ScrN1
+'    NEXT
+'  ENDIF
+'NEXT
+
+'%%heading:Initialize Random Number Generator
+HIGH LightLeft
+PAUSE 1
+RCTIME LightLeft, 1, CoinFlip
+
+'%%section:MotorAdd
+'%%heading:Increment Motor Speeds
+'%%requires:MotorSet
+MotorAdd:  'Increment Speeds
+  RightMotor = RightMotor + MoveRight MIN 156 MAX 356 - 128
+  LeftMotor = LeftMotor + MoveLeft MIN 156 MAX 356 - 128
+GOTO MotorSet
+'%%section:MotorMul
+'%%heading:Multiply Motor Speeds
+'%%requires:MotorSet
+MotorMul:
+  FOR ScrB3 = 0 TO 1
+    Motors(ScrB3) = (Motors(ScrB3) - 128) * (Moves(ScrB3) - 128) >> 6 + 128 & 255 MIN 28 MAX 228
+  NEXT
+GOTO MotorSet
+'%%section:MotorSet
+'%%heading:Set Motor Speeds
+MotorSet:
+    READ 2, rightstop
+    'rightstop = 85      'set for servos shipped to Peru
+    readout =  ((650 + rightstop - 128) + RightMotor)
+    'readout =  ((760 -128) + RightMotor)
+    'DEBUG "Right servo gets   ", DEC readout,"  stop= ",? rightstop, CR
+    READ 1, leftstop
+    'leftstop = 85       'set for servos shipped to Peru
+    readout =  ((650 + leftstop + 128) - LeftMotor)
+    'readout = ((748 + 128) - LeftMotor)
+    'DEBUG "Left servo gets   ", DEC readout,"  stop= ",? leftstop, CR
+  FOR Counter6 = 0 TO MoveTime
+    'DEBUG ?counter6,?movetime,CR
+    PULSOUT MotorRight, ((650 + rightstop + 128) - RightMotor) 'ScrB0 is calibrated value from eeprom
+    PAUSE 15
+    'PULSOUT MotorRight, ((760 -128) + RightMotor) 'First version that worked
+
+    PULSOUT MotorLeft, ((650 + leftstop - 128) + LeftMotor)  'ScrB1 is calibrated value from eeprom
+    PAUSE 15
+    'PULSOUT MotorLeft, ((748 + 128) - LeftMotor)  'First version that worked
+    'pause 5 may control the timing of the servos
+  PAUSE 20
+  NEXT
+  'Used in order to ensure that every movement is performed
+PAUSE 30
+RETURN
+
+
+ '%%section:ReadLight
+ '%%heading:Read Light Sensors
+ ReadLight:
+    HIGH LightLeft
+    PAUSE 3
+    RCTIME LightLeft,1,W0
+
+    W0 = W0 MAX 255
+    'DEBUG HOME,CLS, "Left Raw Value = ",?W0,CR
+    LeftLight = 255 - W0
+    'LeftLight = 255 - (W0 / 4 MAX 255)
+    'LeftLight = 255 - ((W0 / 19) MAX 255)
+
+    HIGH LightRight
+    PAUSE 3
+    RCTIME LightRight,1,W0
+
+    W0 = W0 MAX 255
+    'DEBUG "Right Raw Value = ",?W0,CR
+    RightLight = 255 - W0
+    'RightLight = 255 - (W0 / 4 MAX 255)
+    'RightLight = 255 - ((W0 / 19) MAX 255)
+    'DEBUG ?leftlight,?rightlight
+    'PAUSE 200
+RETURN
+
+'%%section:ReadBars
+'%%heading:Read Bar Codes
+'ReadBars:
+'  HIGH LineEnable
+'  PAUSE 1
+'  IF (LineLeft = 0 OR LineRight = 0) THEN NoBars
+'  DO WHILE (LineRight)
+'  LOOP
+'  PULSIN LineRight, 1, ScrW1
+'  IF (ScrW1 = 0) THEN NoBars
+'  PULSIN LineRight, 1, ScrW0
+'  IF (ScrW0 = 0) THEN NoBars
+'  ScrB3 = (ScrW0 >> 1) + (ScrW1 >> 1) >> 8
+'  FOR ScrB2 = 1 TO 5
+'    IF (ScrB2 <= 4) THEN
+'      LineCount = LineCount << 1
+'      IF (ScrW0.HIGHBYTE > ScrB3) THEN LineCount.LOWBIT = 1
+'    ENDIF
+''    PULSIN LineRight, 1, ScrW0
+ '   IF (ScrW0 = 0) THEN NoBars
+'  NEXT
+'  IF (LineCount.BIT3) THEN LineCount = LineCount REV 3 | 8
+'  GOTO LineDisable
+'NoBars:
+'  Linecount = 0
+'LineDisable:
+'  LOW LineEnable
+'RETURN
+'%%section:ReadLine
+'%%heading:Read the Line Sensors
+'ReadLine:
+'  HIGH LineEnable
+'  PAUSE 1
+'  ScrT0 = LineLeft
+'  ScrT1 = LineRight
+'  IF (ScrT0 = LeftLine AND ScrT1 = RightLine) THEN
+'    LineCount = LineCount + 1 MAX 8
+'  ELSE
+'    LineCount = 1
+'   LeftLine = ScrT0
+'    RightLine = ScrT1
+'  ENDIF
+'  LOW LineEnable
+'RETURN
+
+'%%section:ReadObstacle
+'%%heading:Read Obstacle Sensors
+ReadObstacle:
+  LOOKUP irFreq,[37500, 38250, 39500, 40500, 41500], W0
+  DEBUG DEC5 W0
+  FREQOUT ObsTxLeft, 1, W0
+  ScrT0 = ~ ObsRxLeft
+  LOW ObsTxLeft
+  FREQOUT ObsTxRight, 1, W0
+  ScrT1 = ~ ObsRxRight
+  LOW ObsTxRight
+  IF (ScrT0 = LeftObstacle AND ScrT1 = RightObstacle) THEN
+    ObstacleCount = ObstacleCount + 1 MAX 8
+  ELSE
+    ObstacleCount = 1
+    LeftObstacle = ScrT0
+    RightObstacle = ScrT1
+  ENDIF
+  ' ScrT0 = ~ IN1          '~ does inverse of input
+  ' ScrT1 = ~ IN2          'if IN1 is 0 then whisker is mad
+RETURN
+
+'%%section:ReadTouch
+'%%heading:Read Touch Sensors
+ReadTouch:
+ ScrT0 = ~ LWhisker          '~ does inverse of input
+ ScrT1 = ~ RWhisker          'if IN1 is 0 then whisker is made
+  IF (ScrT0 = LeftWhiskerObstacle AND ScrT1 = RightWhiskerObstacle) THEN
+    WhiskerObstacleCount = WhiskerObstacleCount + 1 MAX 8
+  ELSE
+    WhiskerObstacleCount = 1
+    LeftWhiskerObstacle = ScrT0
+    RightWhiskerObstacle = ScrT1
+  ENDIF
+  LeftWhiskerObstacle = ScrT0
+  RightWhiskerObstacle = ScrT1
+  'DEBUG ?LeftWhiskerObstacle, ?RightWhiskerObstacle, CR
+RETURN
+
+'%%section:FlipCoin
+'%%heading:Flip a Coin
+FlipCoin:
+  RANDOM CoinFlip
+RETURN
+'%%section:Postscript
+'%%heading:End of Program

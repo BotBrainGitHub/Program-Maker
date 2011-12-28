@@ -1,0 +1,145 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+'+++++++++++++++++++++++++++
+'Servo Calibration Program
+'First Draft JO 6/26/10
+'Revised 1/11/11 JO
+'Revised 1/12/11 Steve - Changed servonum values and direction of prev/next num
+'+++++++++++++++++++++++++++
+'assume Left Whisker pin 1, Right Whisker pin 2
+'assume left servo pin 12, right servo pin 13
+
+
+btnwrk VAR Byte
+Temp VAR Byte
+Temp2 VAR Word
+counter VAR Nib
+ServoNum VAR Word
+pitch CON 3500
+DEBUG CLS
+start:
+READ 0, Temp  'Track the number of resets, i.e. the location in the calibration cycle
+WRITE 0, Temp + 1
+IF (Temp + 1)> 3 THEN WRITE 0, 0
+PAUSE 1000
+
+
+
+DATA @0,0,128, 128  'Using three data locations, 15 - 17
+                          '15 is number of resets
+                          '16 - 19 are servo stop/start points
+                          '128 is center point, equivalent to 760
+
+
+
+
+SELECT Temp  'Temp is the number of resets
+
+CASE 0   'Beginning of calibration process, giving instructions, waiting for button press
+ DEBUG 2,10,1, "Servo Calbration program", CR, CR
+ DO
+  DEBUG 2,12,3,  "Press Reset to Begin"
+    PAUSE 500
+    DEBUG 2,12,3,"                    "
+    PAUSE 500
+  LOOP
+
+CASE 1   'First step in process, slow left servo to stop point
+counter = 0
+ServoNum = 795  'calibration start #  May need to change for different servos
+
+    DEBUG 2,15,1,"STEP ONE", CR
+    DEBUG "The left servo should be moving slowly.", CR
+    DEBUG "Touch the left whisker sensor until it just stops", CR
+    DEBUG "the Servo Center Number will reduce by one for each whisker touch", CR
+    DEBUG "If you go too far, use the right whisker sensor", CR
+    DEBUG "to go back", CR
+
+   DO
+    PULSOUT 12,ServoNum
+    PAUSE 10
+    BUTTON 1,0,255,250,btnwrk,1, NextNumLeft
+    BUTTON 2,0,255,250,btnwrk,1, PrevNumLeft
+    LeftGo:
+    DEBUG 2,1,8, "Servo Center Number =  ", DEC ServoNum
+    DEBUG 2,1,9,"Press Reset when Servo stops moving"
+    WRITE 1,(ServoNum - 650 -6)  'must reconstitute in "include" program
+                                 'final number is to center it in the servo range
+    PAUSE 100
+  LOOP
+
+
+CASE 2   'Second step in process, slow right servo to stop point
+  Counter = 0
+  ServoNum = 695 'calibration start #  May need to change for different servos
+
+    DEBUG 2,15,1,"STEP TWO", CR
+    DEBUG "The Right servo should be moving slowly.", CR
+    DEBUG "Touch the left whisker sensor until it just stops", CR
+    DEBUG "the Servo Center Number will increase by one for each whisker touch", CR
+    DEBUG "If you go too far, use the right whisker sensor", CR
+    DEBUG "to go back", CR
+ DO
+    PULSOUT 13,ServoNum
+    PAUSE 10
+    BUTTON 1,0,255,250,btnwrk,1, NextNumRight
+    BUTTON 2,0,255,250,btnwrk,1, PrevNumRight
+    RightGo:
+    DEBUG 2,1,8, "Servo Center Number =  ", DEC ServoNum
+    DEBUG 2,1,9,"Press Reset when Servo stops moving"
+    WRITE 2,(ServoNum - 650 + 7) 'must reconstitute in "include" program
+                                 'final number is to center it in the servo range
+    PAUSE 100
+ LOOP
+
+CASE 3
+    READ 1,Temp
+    READ 2,Temp2
+    DEBUG "Left Servo Center =   ", DEC (Temp + 650),CR
+    DEBUG "Right Servo Center =  ", DEC (Temp2 + 650),CR
+    DEBUG  "Done calibrating servos",CR
+    DEBUG   "The Servo Stop Number are stored"
+  DO
+    DEBUG 2,10,8, "Close these 2  windows to return to Graphical Editor"
+      PAUSE 800
+    DEBUG 2,10,8, "         OR press RESET to start over               "
+      PAUSE 800
+  LOOP
+CASE 4
+  GOTO Start
+ENDSELECT
+
+NextNumLeft:
+  ServoNum = ServoNum - 1
+  GOSUB BeepUp
+GOTO LeftGo
+
+PrevNumLeft:
+  ServoNum = ServoNum + 1
+  GOSUB BeepDn
+GOTO LeftGo
+
+NextNumRight:
+  ServoNum = ServoNum - 1
+  GOSUB BeepUp
+GOTO RightGo
+
+PrevNumRight:
+  ServoNum = ServoNum + 1
+  GOSUB BeepDn
+GOTO RightGo
+
+BeepUp:
+  FREQOUT 15,5,pitch +1200  'change time from 2 to 10
+   PAUSE 1
+   'FREQOUT 15,500,Pitch + 100
+   'PAUSE 1
+RETURN
+
+BeepDn:
+  FREQOUT 15,8,pitch + 500  'change time from 2 to 10
+   PAUSE 1
+   'FREQOUT 15,500,Pitch + 100
+   'PAUSE 1
+RETURN

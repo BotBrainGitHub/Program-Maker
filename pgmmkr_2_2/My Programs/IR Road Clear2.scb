@@ -1,0 +1,172 @@
+<!-- Generated code: DO NOT EDIT! Any changes will void this file. -->
+<!-- BA09C6F39086845D03EBF7393BED44BD -->
+<opt autoreadsensors="2" class="Scribbler_Worksheet" pinconfiguration="1" version="1.0">
+  <_children active="1" activecalls="0" activeout="1" class="Scribbler_Subroutine" color="green" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_green" />
+    </_children>
+    <_children active="1" activeout="1" class="Scribbler_Loop" subclass="">
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_begin">
+        <action reps="0" />
+      </_children>
+      <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="obstacle_ww" text="" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+            <action call="" icon="tune" tempo="5" text="TD!">
+              <_sequence abbr="TD!" bars="1" class="Scribbler_SoundBite" color="red" comment="Ta Dah!" group="Bugle" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="152.5" fmult="1" type="note">
+                  <_frequency>659.25511382574</_frequency>
+                  <_frequency>1046.50226120239</_frequency>
+                </_notes>
+                <_notes dmult="1" duration="35" fmult="1" frequency="0" type="note" />
+                <_notes dmult="3" duration="187.5" fmult="1" type="note">
+                  <_frequency>659.25511382574</_frequency>
+                  <_frequency>1046.50226120239</_frequency>
+                </_notes>
+              </_sequence>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="else">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <action></action>
+        </_children>
+        <action></action>
+      </_children>
+      <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="obstacle_rw" text="" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+            <action call="" icon="tune" tempo="6" text="C G C G">
+              <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="C" bars="1" class="Scribbler_SoundBite" color="white" comment="C" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="187.5" fmult="1" frequency="261.625565300599" type="note" />
+              </_sequence>
+              <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="G" bars="1" class="Scribbler_SoundBite" color="white" comment="G" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="187.5" fmult="1" frequency="391.995435981749" type="note" />
+              </_sequence>
+              <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="C" bars="1" class="Scribbler_SoundBite" color="white" comment="C" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="187.5" fmult="1" frequency="261.625565300599" type="note" />
+              </_sequence>
+              <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="G" bars="1" class="Scribbler_SoundBite" color="white" comment="G" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="187.5" fmult="1" frequency="391.995435981749" type="note" />
+              </_sequence>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="else">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <action></action>
+        </_children>
+        <action></action>
+      </_children>
+      <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="obstacle_wr" text="" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+            <action call="" icon="tune" tempo="7" text="E E Eb ...">
+              <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="E" bars="1" class="Scribbler_SoundBite" color="white" comment="E" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="187.5" fmult="1" frequency="329.62755691287" type="note" />
+              </_sequence>
+              <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="E" bars="1" class="Scribbler_SoundBite" color="white" comment="E" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="187.5" fmult="1" frequency="329.62755691287" type="note" />
+              </_sequence>
+              <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="Eb" bars="1" class="Scribbler_SoundBite" color="black" comment="Eb (D#)" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="187.5" fmult="0.943874312681693" frequency="329.62755691287" type="note" />
+              </_sequence>
+              <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="E" bars="1" class="Scribbler_SoundBite" color="white" comment="E" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="187.5" fmult="1" frequency="329.62755691287" type="note" />
+              </_sequence>
+              <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="Eb" bars="1" class="Scribbler_SoundBite" color="black" comment="Eb (D#)" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="187.5" fmult="0.943874312681693" frequency="329.62755691287" type="note" />
+              </_sequence>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="else">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <action></action>
+        </_children>
+        <action></action>
+      </_children>
+      <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="obstacle_rr" text="" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+            <action call="" icon="tune" tempo="9" text="TD!">
+              <_sequence abbr="TD!" bars="1" class="Scribbler_SoundBite" color="red" comment="Ta Dah!" group="Bugle" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes dmult="1" duration="152.5" fmult="1" type="note">
+                  <_frequency>659.25511382574</_frequency>
+                  <_frequency>1046.50226120239</_frequency>
+                </_notes>
+                <_notes dmult="1" duration="35" fmult="1" frequency="0" type="note" />
+                <_notes dmult="3" duration="187.5" fmult="1" type="note">
+                  <_frequency>659.25511382574</_frequency>
+                  <_frequency>1046.50226120239</_frequency>
+                </_notes>
+              </_sequence>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="else">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <action></action>
+        </_children>
+        <action></action>
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_end">
+        <action></action>
+      </_children>
+      <action></action>
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_green" />
+    </_children>
+    <action></action>
+    <callsto></callsto>
+  </_children>
+</opt>

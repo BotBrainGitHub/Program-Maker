@@ -1,0 +1,137 @@
+<!-- Generated code: DO NOT EDIT! Any changes will void this file. -->
+<!-- D8427FD0C6D24FE61842CAFD76C82A01 -->
+<opt autoreadsensors="2" class="Scribbler_Worksheet" pinconfiguration="1" version="1.0">
+  <_children active="1" activecalls="0" activeout="1" class="Scribbler_Subroutine" color="green" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_green" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SetupTile" subclass="">
+      <action icon="setup_1" />
+    </_children>
+    <_children active="1" activeout="1" class="Scribbler_Loop" subclass="">
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_begin">
+        <action reps="0" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+        <action call="" icon="tune" tempo="5" text="C">
+          <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="C" bars="1" class="Scribbler_SoundBite" color="white" comment="C" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+            <_notes dmult="1" duration="187.5" fmult="1" frequency="261.625565300599" type="note" />
+          </_sequence>
+        </action>
+      </_children>
+      <_children active="1" activeout="0" call="yellow" class="Scribbler_CallTile" subclass="">
+        <action call="yellow" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_PauseTile" subclass="">
+        <action call="" icon="pause" text="1.0s" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+        <action call="" icon="tune" tempo="5" text="C C#">
+          <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="C" bars="1" class="Scribbler_SoundBite" color="white" comment="C" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+            <_notes dmult="1" duration="187.5" fmult="1" frequency="261.625565300599" type="note" />
+          </_sequence>
+          <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="C#" bars="1" class="Scribbler_SoundBite" color="black" comment="C# (Db)" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+            <_notes dmult="1" duration="187.5" fmult="1.0594630943593" frequency="261.625565300599" type="note" />
+          </_sequence>
+        </action>
+      </_children>
+      <_children active="1" activeout="0" call="orange" class="Scribbler_CallTile" subclass="">
+        <action call="orange" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+        <action call="" icon="tune" tempo="5" text="D Eb E">
+          <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="D" bars="1" class="Scribbler_SoundBite" color="white" comment="D" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+            <_notes dmult="1" duration="187.5" fmult="1" frequency="293.664767917408" type="note" />
+          </_sequence>
+          <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="Eb" bars="1" class="Scribbler_SoundBite" color="black" comment="Eb (D#)" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+            <_notes dmult="1" duration="187.5" fmult="0.943874312681693" frequency="329.62755691287" type="note" />
+          </_sequence>
+          <_sequence _lengths="[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]" abbr="E" bars="1" class="Scribbler_SoundBite" color="white" comment="E" group="Notes" notelength="1/4" notetranspose="0" tremolo="0">
+            <_notes dmult="1" duration="187.5" fmult="1" frequency="329.62755691287" type="note" />
+          </_sequence>
+        </action>
+      </_children>
+      <_children active="1" activeout="0" call="red" class="Scribbler_CallTile" subclass="">
+        <action call="red" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_end">
+        <action></action>
+      </_children>
+      <action></action>
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_green" />
+    </_children>
+    <action></action>
+    <callsto orange="1" red="1" yellow="1" />
+  </_children>
+  <_children active="1" activecalls="1" activeout="1" class="Scribbler_Subroutine" color="yellow" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_yellow" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_PauseTile" subclass="">
+      <action call="" icon="pause" text="1.0s" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_StandardTile" subclass="">
+      <action icon="servo1" last="0" newText="70" pos2="20" text="20 to 70 S:15" time="15" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_PauseTile" subclass="">
+      <action call="" icon="pause" text="1.0s" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_StandardTile" subclass="">
+      <action icon="servo1" last="0" newText="20" pos2="70" text="70 to 20 S:15" time="15" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_yellow" />
+    </_children>
+    <action></action>
+    <callsfrom green="1" />
+    <callsto></callsto>
+  </_children>
+  <_children active="1" activecalls="1" activeout="1" class="Scribbler_Subroutine" color="orange" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_orange" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_PauseTile" subclass="">
+      <action call="" icon="pause" text="1.0s" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_StandardTile" subclass="">
+      <action icon="servo2" last="1" newText="70" pos2="20" text="20 to 70 S:9" time="9" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_PauseTile" subclass="">
+      <action call="" icon="pause" text="1.0s" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_StandardTile" subclass="">
+      <action icon="servo2" last="1" newText="20" pos2="70" text="70 to 20 S:9" time="9" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_orange" />
+    </_children>
+    <action></action>
+    <callsfrom green="1" />
+    <callsto></callsto>
+  </_children>
+  <_children active="1" activecalls="1" activeout="1" class="Scribbler_Subroutine" color="red" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_red" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_PauseTile" subclass="">
+      <action call="" icon="pause" text="1.0s" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_StandardTile" subclass="">
+      <action icon="servo3" last="2" newText="30" pos2="80" text="80 to 30 S:20" time="20" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_PauseTile" subclass="">
+      <action call="" icon="pause" text="1.0s" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_StandardTile" subclass="">
+      <action icon="servo3" last="2" newText="80" pos2="30" text="30 to 80 S:20" time="20" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_red" />
+    </_children>
+    <action></action>
+    <callsfrom green="1" />
+    <callsto></callsto>
+  </_children>
+</opt>

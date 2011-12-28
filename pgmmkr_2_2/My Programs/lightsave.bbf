@@ -1,0 +1,34 @@
+<!-- Generated code: DO NOT EDIT! Any changes will void this file. -->
+<!-- C719438690AA64E157CFBD6CA7D386BA -->
+<opt autoreadsensors="2" class="Scribbler_Worksheet" pinconfiguration="1" version="1.0">
+  <_children active="1" activecalls="0" activeout="1" class="Scribbler_Subroutine" color="green" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_green" />
+    </_children>
+    <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+      <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+        <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+          <action icon="light_lxx" text="≥1" type="if" />
+        </_children>
+        <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+          <action icon="flag_green" type="if" />
+        </_children>
+        <action></action>
+      </_children>
+      <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="else">
+        <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+          <action icon="flag_green" type="else" />
+        </_children>
+        <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+          <action icon="flag_green" type="else" />
+        </_children>
+        <action></action>
+      </_children>
+      <action></action>
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_green" />
+    </_children>
+    <action></action>
+  </_children>
+</opt>

@@ -1,0 +1,963 @@
+%%Groups:Song,Bugle,Notes,Effects,Morse,DTMF
+
+X:
+T::-o
+N:Uh oh!
+G:Effects
+I:bars=0,color=red
+|:15P1000M5:|zM100|:25P1000M8:|
+
+X:
+T:oOo
+N:Siren (US)
+Q:60
+G:Effects
+I:bars=0,color=red
+|:2000:500_8P$M0:||:500:2000_8P$M0:|
+
+X:
+T:.
+N:Pulse
+Q:60
+G:Effects
+I:bars=0,color=blue
+P100M0
+
+X:
+T:,
+N:Tick
+Q:60
+G:Effects
+I:bars=0,color=blue
+P50M30P25M150
+
+X:
+T:,,,
+N:Tick Tick Tick
+Q:60
+G:Effects
+I:bars=0,color=blue
+|:3P50M30P25M150:|
+
+X:
+T:T!
+N:Telephone!
+G:Effects
+I:bars=0,color=yellow
+|:18H1000M40H1200M40:|
+
+X:
+T:R21
+N:Bot Talk 1
+G:Effects
+I:bars=0,color=magenta
+H2300M100H1500M50H2000M90H1670M120
+
+X:
+T:R22
+N:Bot Talk 2
+G:Effects
+I:bars=0,color=purple
+H2000M90H1200M120H560M68H3000M100
+
+X:
+T:R23
+N:Bot Talk 3
+G:Effects
+I:bars=0,color=blue
+H2500M90H3000M150H1050M70H1460M100
+
+X:
+T:R24
+N:Bot Talk 4
+G:Effects
+I:bars=0,color=cyan
+H2400M50H2000M90H1200M120H2800M70
+
+X:
+T:o)!
+N:Wolf Whistle
+G:Effects
+Q:60
+I:bars=0,color=orange
+|:1200:200:5_8P$M0:|zM100|:1000:300:5_8P$M0:||:300:2000:8_8P$M0:|
+
+X:
+T:o_o
+N:Frog
+G:Effects
+Q:60
+I:bars=0,color=magenta
+|:40:15P100M$/2:|zM200
+
+X:
+T:>>
+M:4/4
+L:1/8
+N:Intro
+Q:320
+G:Song
+I:bars=1,color=red
+zGGzGAz_BzBz3
+
+X:
+T:!!
+M:4/4
+L:1/8
+N:Nyah! Nyah!
+Q:320
+G:Song
+I:bars=1,color=magenta
+ggeag2e2
+
+X:
+T:LaC
+M:4/4
+L:1/8
+N:La Cucaracha
+Q:320
+G:Song
+I:bars=2,color=yellow
+|:GGGc3[1e2[2e4:|
+
+X:
+T:BH
+M:4/4
+L:1/8
+N:Battle Hymn
+Q:240
+G:Song
+I:bars=2,color=blue
+GG2GG2FE2Gc2de2ee2dc4
+
+X:
+T:Dix
+M:4/4
+L:1/8
+N:Dixie
+Q:160
+G:Song
+I:bars=2,color=red
+G/E/CCC/D/E/F/GGGEz
+
+X:
+T:Fr
+M:4/4
+L:1/8
+N:Marsellaise
+Q:160
+G:Song
+I:bars=2,color=blue
+G/>G/ccddg>ec2
+
+X:
+T:Br
+M:4/4
+L:1/8
+N:Rule Britannia
+Q:160
+G:Song
+I:bars=2,color=red
+[ce]2[ce][Df]/2z/2[Bf]2[ce][df]>[ce][Bd][Gc][GB]4
+
+X:
+T:).(
+M:4/4
+L:1/8
+N:Kradoutja
+Q:160
+G:Song
+I:bars=2,color=yellow
+cd_e2d2c2cd_egd_ec2
+
+X:
+T:pq\
+M:4/4
+L:1/8
+N:Wedding march
+Q:120
+G:Song
+I:bars=2,color=purple
+Gc/>c/c2|Gd/>B/c2
+
+X:
+T::-)
+M:4/4
+L:1/8
+N:Ode to Joy
+Q:160
+G:Song
+I:bars=2,color=orange
+eefg|gfed|ccde|e>dd2
+
+X:
+T:Du
+M:3/4
+L:1/8
+N:Du du liegst mir
+Q:180
+G:Song
+I:bars=2,color=orange
+e3e3edeg2f|d3d3dgfe3
+
+X:
+T:P!1
+M:6/8
+L:1/8
+N:Pop Goes the Weasel 1
+Q:360
+G:Song
+I:bars=1,color=red
+|:Gc2cd2dege[1c2Gc2cd2fe3c2[2c3:|
+
+X:
+T:P!2
+M:6/8
+L:1/8
+N:Pop Goes the Weasel 2
+Q:360
+G:Song
+I:bars=1,color=red
+az2d2fe3c2
+
+X:
+T:/o\
+M:4/4
+L:1/8
+N:Strike up the Band
+Q:360
+G:Song
+I:bars=2,color=red
+c5B_B5A|G2FE2D|C3z3
+
+X:
+T:fJ1
+M:4/4
+L:1/8
+N:Frere Jacque 1
+Q:160
+G:Song
+I:bars=1,color=blue
+|:cdec:|
+
+X:
+T:fJ2
+M:4/4
+L:1/8
+N:Frere Jacque 2
+Q:160
+G:Song
+I:bars=1,color=blue
+|:efg2:|
+
+X:
+T:fJ3
+M:4/4
+L:1/8
+N:Frere Jacque 3
+Q:160
+G:Song
+I:bars=1,color=blue
+|:2g/a/g/f/ec:|
+
+X:
+T:fJ4
+M:4/4
+L:1/8
+N:Frere Jacque 4
+Q:160
+G:Song
+I:bars=1,color=blue
+|:cGc2:|
+
+X:
+T:Zzz
+M:4/4
+L:1/8
+N:Lullaby
+Q:160
+G:Song
+I:bars=2,color=cyan,tremolo=1
+ee{f}g3ee{f}g3eg{b}c'2{a}b2{g}a2{g}a2g4
+
+X:
+T::-(
+M:4/4
+L:1/8
+N:Dead
+Q:160
+G:Song
+I:bars=2,color=blue,tremolo=5,internote=100
+C2CCC2_EDDCCB,C2
+
+X:
+T:Ch!
+M:3/4
+L:1/4
+N:Charge!
+Q:320
+G:Bugle
+I:bars=1,color=red
+Gcegzeg6
+
+X:
+T:TD!
+M:3/4
+L:1/4
+N:Ta Dah!
+Q:320
+G:Bugle
+I:bars=1,color=red
+[ec'][ec']3
+
+X:
+T:Tp1
+M:3/4
+L:1/8
+N:Taps 1 & 5
+Q:120
+G:Bugle
+I:bars=1,color=blue
+G>Gc5z
+
+X:
+T:Tp2
+M:3/4
+L:1/8
+Q:120
+N:Taps 2
+G:Bugle
+I:bars=1,color=blue
+G>ce5z
+
+X:
+T:Tp3
+M:3/4
+L:1/8
+Q:120
+N:Taps 3
+G:Bugle
+I:bars=1,color=blue
+|:Gce2:|Gce5z
+
+X:
+T:Tp4
+M:3/4
+L:1/8
+Q:120
+N:Taps 4
+G:Bugle
+I:bars=1,color=blue
+c>eg4e2c2G5z
+
+X:
+T:Rv1
+M:3/4
+L:1/8
+Q:240
+N:Reveille 1 & 3
+G:Bugle
+I:bars=2,color=yellow
+G|:ce/c/Gece/c/Ge[1ce/c/Gce2cG[2ce/c/GGc3:|
+
+X:
+T:Rv2
+M:3/4
+L:1/8
+Q:240
+N:Reveille 2
+G:Bugle
+I:bars=2,color=yellow
+|:eeeeeg2e[1cecece2c[2cecGGc3:|
+
+X:
+T:.A
+M:4/4
+L:1/16
+Q:480
+N:Morse A
+G:Morse
+I:bars=0,color=yellow
+czc3z3
+
+X:
+T:.B
+M:4/4
+L:1/16
+Q:480
+N:Morse B
+G:Morse
+I:bars=0,color=blue
+c3zczczcz3
+
+X:
+T:.C
+M:4/4
+L:1/16
+Q:480
+N:Morse C
+G:Morse
+I:bars=0,color=blue
+c3zczc3zcz3
+
+X:
+T:.D
+M:4/4
+L:1/16
+Q:480
+N:Morse D
+G:Morse
+I:bars=0,color=blue
+c3zczcz3
+
+X:
+T:.E
+M:4/4
+L:1/16
+Q:480
+N:Morse E
+G:Morse
+I:bars=0,color=yellow
+cz3
+
+X:
+T:.F
+M:4/4
+L:1/16
+Q:480
+N:Morse F
+G:Morse
+I:bars=0,color=blue
+czczc3zcz3
+
+X:
+T:.G
+M:4/4
+L:1/16
+Q:480
+N:Morse G
+G:Morse
+I:bars=0,color=blue
+c3zc3zcz3
+
+X:
+T:.H
+M:4/4
+L:1/16
+Q:480
+N:Morse H
+G:Morse
+I:bars=0,color=blue
+czczczcz3
+
+X:
+T:.I
+M:4/4
+L:1/16
+Q:480
+N:Morse I
+G:Morse
+I:bars=0,color=yellow
+czcz3
+
+X:
+T:.J
+M:4/4
+L:1/16
+Q:480
+N:Morse J
+G:Morse
+I:bars=0,color=blue
+czc3zc3zc3z3
+
+X:
+T:.K
+M:4/4
+L:1/16
+Q:480
+N:Morse K
+G:Morse
+I:bars=0,color=blue
+c3zczc3z3
+
+X:
+T:.L
+M:4/4
+L:1/16
+Q:480
+N:Morse L
+G:Morse
+I:bars=0,color=blue
+czc3zczcz3
+
+X:
+T:.M
+M:4/4
+L:1/16
+Q:480
+N:Morse M
+G:Morse
+I:bars=0,color=blue
+c3zc3z3
+
+X:
+T:.N
+M:4/4
+L:1/16
+Q:480
+N:Morse N
+G:Morse
+I:bars=0,color=blue
+c3zcz3
+
+X:
+T:.O
+M:4/4
+L:1/16
+Q:480
+N:Morse O
+G:Morse
+I:bars=0,color=blue
+c3zc3zc3z3
+
+X:
+T:.P
+M:4/4
+L:1/16
+Q:480
+N:Morse P
+G:Morse
+I:bars=0,color=blue
+czc3zc3zcz3
+
+X:
+T:.Q
+M:4/4
+L:1/16
+Q:480
+N:Morse Q
+G:Morse
+I:bars=0,color=yellow
+c3zc3zczc3z3
+
+X:
+T:.R
+M:4/4
+L:1/16
+Q:480
+N:Morse R
+G:Morse
+I:bars=0,color=blue
+czc3zcz3
+
+X:
+T:.S
+M:4/4
+L:1/16
+Q:480
+N:Morse S
+G:Morse
+I:bars=0,color=blue
+czczcz3
+
+X:
+T:.T
+M:4/4
+L:1/16
+Q:480
+N:Morse T
+G:Morse
+I:bars=0,color=blue
+c3z3
+
+X:
+T:.U
+M:4/4
+L:1/16
+Q:480
+N:Morse U
+G:Morse
+I:bars=0,color=yellow
+czczc3z3
+
+X:
+T:.W
+M:4/4
+L:1/16
+Q:480
+N:Morse W
+G:Morse
+I:bars=0,color=blue
+czc3zc3z3
+
+X:
+T:.X
+M:4/4
+L:1/16
+Q:480
+N:Morse X
+G:Morse
+I:bars=0,color=blue
+c3zczczc3z3
+
+X:
+T:.Y
+M:4/4
+L:1/16
+Q:480
+N:Morse Y
+G:Morse
+I:bars=0,color=yellow
+c3zczc3zc3z3
+
+X:
+T:.Z
+M:4/4
+L:1/16
+Q:480
+N:Morse Z
+G:Morse
+I:bars=0,color=blue
+c3zc3zczcz3
+
+X:
+T:.0
+M:4/4
+L:1/16
+Q:480
+N:Morse 0
+G:Morse
+I:bars=0,color=orange
+c3zc3zc3zc3zc3z3
+
+X:
+T:.1
+M:4/4
+L:1/16
+Q:480
+N:Morse 1
+G:Morse
+I:bars=0,color=orange
+czc3zc3zc3zc3z3
+
+X:
+T:.2
+M:4/4
+L:1/16
+Q:480
+N:Morse 2
+G:Morse
+I:bars=0,color=orange
+czczc3zc3zc3z3
+
+X:
+T:.3
+M:4/4
+L:1/16
+Q:480
+N:Morse 3
+G:Morse
+I:bars=0,color=orange
+czczczc3zc3z3
+
+X:
+T:.4
+M:4/4
+L:1/16
+Q:480
+N:Morse 4
+G:Morse
+I:bars=0,color=orange
+czczczczc3z3
+
+X:
+T:.5
+M:4/4
+L:1/16
+Q:480
+N:Morse 5
+G:Morse
+I:bars=0,color=orange
+czczczczcz3
+
+X:
+T:.6
+M:4/4
+L:1/16
+Q:480
+N:Morse 6
+G:Morse
+I:bars=0,color=orange
+c3zczczczcz3
+
+X:
+T:.7
+M:4/4
+L:1/16
+Q:480
+N:Morse 7
+G:Morse
+I:bars=0,color=orange
+c3zc3zczczcz3
+
+X:
+T:.8
+M:4/4
+L:1/16
+Q:480
+N:Morse 8
+G:Morse
+I:bars=0,color=orange
+c3zc3zc3zczcz3
+
+X:
+T:.9
+M:4/4
+L:1/16
+Q:480
+N:Morse 9
+G:Morse
+I:bars=0,color=orange
+c3zc3zc3zc3zcz3
+
+X:
+T:[1]
+N:DTMF 1
+G:DTMF
+I:bars=0,color=purple
+[H697H1209]M300zM100
+
+X:
+T:[2]
+N:DTMF 2
+G:DTMF
+I:bars=0,color=purple
+[H697H1336]M300zM100
+
+X:
+T:[3]
+N:DTMF 3
+G:DTMF
+I:bars=0,color=purple
+[H697H1477]M300zM100
+
+X:
+T:[4]
+N:DTMF 4
+G:DTMF
+I:bars=0,color=purple
+[H770H1209]M300zM100
+
+X:
+T:[5]
+N:DTMF 5
+G:DTMF
+I:bars=0,color=purple
+[H770H1336]M300zM100
+
+X:
+T:[6]
+N:DTMF 6
+G:DTMF
+I:bars=0,color=purple
+[H770H1477]M300zM100
+
+X:
+T:[7]
+N:DTMF 7
+G:DTMF
+I:bars=0,color=purple
+[H852H1209]M300zM100
+
+X:
+T:[8]
+N:DTMF 8
+G:DTMF
+I:bars=0,color=purple
+[H852H1336]M300zM100
+
+X:
+T:[9]
+N:DTMF 9
+G:DTMF
+I:bars=0,color=purple
+[H852H1477]M300zM100
+
+X:
+T:[0]
+N:DTMF 0
+G:DTMF
+I:bars=0,color=purple
+[H941H1336]M300zM100
+
+X:
+T:[*]
+N:DTMF *
+G:DTMF
+I:bars=0,color=magenta
+[H941H1209]M300zM100
+
+X:
+T:[#]
+N:DTMF #
+G:DTMF
+I:bars=0,color=magenta
+[H941H1477]M300zM100
+
+X:
+T:[A]
+N:DTMF A
+G:DTMF
+I:bars=0,color=blue
+[H697H1633]M300zM100
+
+X:
+T:[B]
+N:DTMF B
+G:DTMF
+I:bars=0,color=blue
+[H770H1633]M300zM100
+
+X:
+T:[C]
+N:DTMF C
+G:DTMF
+I:bars=0,color=blue
+[H852H1633]M300zM100
+
+X:
+T:[D]
+N:DTMF D
+G:DTMF
+I:bars=0,color=blue
+[H941H1633]M300zM100
+
+X:
+T:C
+M:4/4
+L:1/16
+N:C
+Q:320
+G:Notes
+I:bars=1,color=white,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+C
+
+X:
+T:C#
+M:4/4
+L:1/16
+N:C# (Db)
+Q:320
+G:Notes
+I:bars=1,color=black,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+^C
+
+X:
+T:D
+M:4/4
+L:1/16
+N:D
+Q:320
+G:Notes
+I:bars=1,color=white,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+D
+
+X:
+T:Eb
+M:4/4
+L:1/16
+N:Eb (D#)
+Q:320
+G:Notes
+I:bars=1,color=black,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+_E
+
+X:
+T:E
+M:4/4
+L:1/16
+N:E
+Q:320
+G:Notes
+I:bars=1,color=white,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+E
+
+X:
+T:F
+M:4/4
+L:1/16
+N:F
+Q:320
+G:Notes
+I:bars=1,color=white,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+F
+
+X:
+T:F#
+M:4/4
+L:1/16
+N:F# (Gb)
+Q:320
+G:Notes
+I:bars=1,color=black,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+^F
+
+X:
+T:G
+M:4/4
+L:1/16
+N:G
+Q:320
+G:Notes
+I:bars=1,color=white,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+G
+
+X:
+T:Ab
+M:4/4
+L:1/16
+N:Ab (G#)
+Q:320
+G:Notes
+I:bars=1,color=black,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+_A
+
+X:
+T:A
+M:4/4
+L:1/16
+N:A
+Q:320
+G:Notes
+I:bars=1,color=white,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+A
+
+X:
+T:Bb
+M:4/4
+L:1/16
+N:Bb (A#)
+Q:320
+G:Notes
+I:bars=1,color=black,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+_B
+
+X:
+T:B
+M:4/4
+L:1/16
+N:B
+Q:320
+G:Notes
+I:bars=1,color=white,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+B
+
+X:
+T:z
+L:1/16
+N:Rest
+Q:320
+G:Notes
+I:bars=1,color=green,_lengths=[1/16 1/8 3/16 1/4 3/8 1/2 3/4 1]
+z
+

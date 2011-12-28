@@ -1,0 +1,16 @@
+<!-- Generated code: DO NOT EDIT! Any changes will void this file. -->
+<!-- BE346AF8FF038B8F22D107C525191110 -->
+<opt autoreadsensors="2" class="Scribbler_Worksheet" pinconfiguration="1" version="1.0">
+  <_children active="1" activecalls="0" activeout="1" class="Scribbler_Subroutine" color="green" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_green" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_StandardTile" subclass="">
+      <action icon="servo9" last="0" newText="1" pos2="1" text="1 to 1 S:1" time="1" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_green" />
+    </_children>
+    <action></action>
+  </_children>
+</opt>

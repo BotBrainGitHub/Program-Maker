@@ -1,0 +1,68 @@
+<!-- Generated code: DO NOT EDIT! Any changes will void this file. -->
+<!-- D286C4A1AB403360A8609591E17D8ABD -->
+<opt autoreadsensors="2" class="Scribbler_Worksheet" pinconfiguration="1" version="1.0">
+  <_children active="1" activecalls="0" activeout="1" class="Scribbler_Subroutine" color="green" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_green" />
+    </_children>
+    <_children active="1" activeout="1" class="Scribbler_Loop" subclass="">
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_begin">
+        <action reps="0" />
+      </_children>
+      <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="touch_wr" text="" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_rev" left="-50" right="-50" text="-50:-50 1.00s" timer="1.00" type="set" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_rot_right" left="100" right="-100" text="100:-100 1.00s" timer="1.00" type="set" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="touch_rw" text="" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_rev" left="-50" right="-50" text="-50:-50 1.00s" timer="1.00" type="set" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_rot_left" left="-50" right=" 50" text="-50:50 1.00s" timer="1.00" type="set" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="else">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_fwd" left=" 98" right="100" text="98:100" timer="0.00" type="set" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <action></action>
+        </_children>
+        <action></action>
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_end">
+        <action></action>
+      </_children>
+      <action></action>
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_green" />
+    </_children>
+    <action></action>
+    <callsto></callsto>
+  </_children>
+</opt>

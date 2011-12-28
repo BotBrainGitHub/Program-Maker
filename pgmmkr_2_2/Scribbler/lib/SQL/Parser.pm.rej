@@ -1,0 +1,17 @@
+***************
+*** 1102,1108 ****
+      	    }
+              if (!$alias and uc($col) eq $newcol) {
+                  $newalias = $col;
+-             } else {
+                  $newalias = $self->COLUMN_NAME($alias||$newcol);
+              }
+              $self->{struct}->{ORG_NAME}->{$newcol} = $newalias;
+--- 1104,1110 ----
+      	    }
+              if (!$alias and uc($col) eq $newcol) {
+                  $newalias = $col;
++             } elsif (!$newalias) {
+                  $newalias = $self->COLUMN_NAME($alias||$newcol);
+              }
+              $self->{struct}->{ORG_NAME}->{$newcol} = $newalias;

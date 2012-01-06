@@ -1,0 +1,124 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+'Scribbler include code version 2007.07.25
+
+'---[Pin Definitions]----------------------------------------------------------
+
+Program         PIN 0
+LWhisker        PIN 1
+RWhisker        PIN 2
+LightLeft       PIN 3
+LightRight      PIN 4
+ObsTxLeft       PIN 5  'IR Sensor
+ObsRxLeft       PIN 6  'IR Sensor
+ObsTxRight      PIN 7  'IR Sensor
+ObsRxRight      PIN 8  'IR Sensor
+Servo1          PIN 9
+Servo2          PIN 10
+Servo3          PIN 11
+MotorRight      PIN 12
+MotorLeft       PIN 13
+TripDrain       PIN 14
+Speaker         PIN 15
+
+'---[Pin Initializations]------------------------------------------------------
+
+OUTS = %0000010101111111
+DIRS = %0000010000000000
+'DIRS = %0000001011111111  '0 = Input DIRS controls direction %1111111100000000
+
+'---[Global Variables]---------------------------------------------------------
+LeftObstacle VAR Bit
+RightObstacle VAR Bit
+LeftMotor VAR Byte
+RightMotor VAR Byte
+ScrT0 VAR Bit
+ScrT1 VAR Bit
+ObstacleCount VAR Byte
+
+'---[Protect Calibration DATA in EEPROM]---------------------------------------
+
+  DATA @0, (16)
+
+'---[COUNT Reset BUTTON Presses]-----------------------------------------------
+
+'  READ 15, ResetCount
+'  WRITE 15, ResetCount + 1 MAX 15
+'  PAUSE 500
+'  WRITE 15, 0
+
+'---[Variable Initialization]--------------------------------------------------
+
+LeftMotor = 128
+RightMotor = 128
+
+
+
+
+
+Green:
+  DO
+    GOSUB ReadObstacle
+    IF (LeftObstacle = 1 AND RightObstacle = 1) THEN
+      FREQOUT Speaker, 152, 659, 1046 * 5
+      PAUSE 35
+      FREQOUT Speaker, 562, 659, 1046 * 5
+    ENDIF
+    IF (LeftObstacle = 0 AND RightObstacle = 1) THEN
+      FREQOUT Speaker, 150, 261 * 5
+      FREQOUT Speaker, 150, 391 * 5
+      FREQOUT Speaker, 150, 261 * 5
+      FREQOUT Speaker, 150, 391 * 5
+    ENDIF
+    IF (LeftObstacle = 1 AND RightObstacle = 0) THEN
+      FREQOUT Speaker, 120, 329 * 5
+      FREQOUT Speaker, 120, 329 * 5
+      FREQOUT Speaker, 120, 311 * 5
+      FREQOUT Speaker, 120, 329 * 5
+      FREQOUT Speaker, 120, 311 * 5
+    ENDIF
+    IF (LeftObstacle = 0 AND RightObstacle = 0) THEN
+      FREQOUT Speaker, 76, 391 * 5
+      FREQOUT Speaker, 76, 523 * 5
+
+    ENDIF
+  LOOP
+END
+
+'---[Read Obstacle Sensors]----------------------------------------------------
+
+
+ReadObstacle:
+  GOSUB TripDrainRoutine
+  FREQOUT ObsTxLeft, 1, 40500
+  ScrT0 = ~ ObsRxLeft
+  LeftObstacle = ~ ObsRxLeft
+  LOW ObsTxLeft
+  PAUSE 1
+  FREQOUT ObsTxRight, 1, 40500
+  ScrT1 = ~ ObsRxRight
+  RightObstacle = ~ ObsRxRight
+  LOW ObsTxRight
+' ScrT0 = ~ IN1          '~ does inverse of input
+' ScrT1 = ~ IN2          'if IN1 is 0 then whisker is made
+
+  IF (ScrT0 = LeftObstacle AND ScrT1 = RightObstacle) THEN
+    ObstacleCount = ObstacleCount + 1 MAX 8
+  ELSE
+    ObstacleCount = 1
+    LeftObstacle = ScrT0
+    RightObstacle = ScrT1
+  ENDIF
+  LeftObstacle = ScrT0
+  RightObstacle = ScrT1
+  DEBUG CLS,?LeftObstacle, ?RightObstacle
+RETURN
+
+'+++++++++++==Tripdrain++++++++++
+TripDrainRoutine:
+  HIGH 14
+  PAUSE 5
+  LOW 14
+RETURN
+'---[End of Program]-----------------------------------------------------------

@@ -1,0 +1,15 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+temp VAR Byte
+temp1 VAR Byte
+temp2 VAR Byte
+
+READ 0,temp
+READ 1,temp1
+READ 2,temp2
+
+DEBUG "contents of first three data locations"
+DEBUG ?temp,?temp1,?temp2
+
+END
+

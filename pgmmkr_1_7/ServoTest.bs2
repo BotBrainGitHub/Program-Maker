@@ -1,0 +1,35 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+'Servo test: to find values
+Counter  VAR Byte
+Pulse VAR Word
+LoVal CON 725
+HiVal CON 753
+Pulse = LoVal
+
+
+Forward:
+  Pulse = Pulse + 1
+  'GOTO MoveServo
+  FOR Counter = 1 TO 5
+    PULSOUT 13,Pulse
+    PULSOUT 12,Pulse
+    PAUSE 100
+  NEXT
+  PAUSE 500
+  IF Pulse > HiVal THEN GoBack
+  DEBUG "Forward  ",?Pulse
+GOTO Forward
+
+GoBack:
+ Pulse = Pulse - 1
+ FOR Counter = 1 TO 5
+    PULSOUT 13, Pulse
+    PULSOUT 12,Pulse
+    PAUSE 100
+  NEXT
+  PAUSE 500
+  IF Pulse < LoVal THEN Forward
+  DEBUG "GoBack  ",?Pulse
+GOTO GoBack
+

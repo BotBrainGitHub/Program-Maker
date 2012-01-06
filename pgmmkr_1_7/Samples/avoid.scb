@@ -1,0 +1,341 @@
+<!-- Generated code: DO NOT EDIT! Any changes will void this file. -->
+<!-- 8D5AF4B96CC2BB863C1C321CC438AF12 -->
+<opt autoreadsensors="1" class="Scribbler_Worksheet" version="0.23">
+  <_children active="1" activecalls="0" activeout="1" class="Scribbler_Subroutine" color="green" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_green" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+      <action call="" icon="tune" tempo="5" text="Ch!">
+        <_sequence abbr="Ch!" bars="1" class="Scribbler_SoundBite" color="red" comment="Charge!" group="Bugle" notelength="1/4" notetranspose="0" tremolo="0">
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="391.995435981749" type="note" />
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="523.251130601197" type="note" />
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="659.25511382574" type="note" />
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="783.990871963499" type="note" />
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="0" type="note" />
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="659.25511382574" type="note" />
+          <_notes dmult="3" duration="187.5" fmult="1" frequency="783.990871963499" type="note" />
+        </_sequence>
+      </action>
+    </_children>
+    <_children active="1" activeout="1" class="Scribbler_Loop" subclass="">
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_begin">
+        <action reps="0" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+        <action call="" icon="move_fwd" left=" 50" right=" 50" text="50:50" timer="0.00" type="set" />
+      </_children>
+      <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="coin_heads" text="6+" type="if" />
+          </_children>
+          <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+            <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+                <action icon="coin_heads" text="" type="if" />
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+                <action call="" icon="tune" tempo="5" text="R21 R22">
+                  <_sequence abbr="R21" bars="0" class="Scribbler_SoundBite" color="magenta" comment="Bot Talk 1" group="Effects" notelength="1/4" notetranspose="0" tremolo="0">
+                    <_notes dmult="1" duration="100" fmult="1" frequency="2300" type="note" />
+                    <_notes dmult="1" duration="50" fmult="1" frequency="1500" type="note" />
+                    <_notes dmult="1" duration="90" fmult="1" frequency="2000" type="note" />
+                    <_notes dmult="1" duration="120" fmult="1" frequency="1670" type="note" />
+                  </_sequence>
+                  <_sequence abbr="R22" bars="0" class="Scribbler_SoundBite" color="purple" comment="Bot Talk 2" group="Effects" notelength="1/4" notetranspose="0" tremolo="0">
+                    <_notes dmult="1" duration="90" fmult="1" frequency="2000" type="note" />
+                    <_notes dmult="1" duration="120" fmult="1" frequency="1200" type="note" />
+                    <_notes dmult="1" duration="68" fmult="1" frequency="560" type="note" />
+                    <_notes dmult="1" duration="100" fmult="1" frequency="3000" type="note" />
+                  </_sequence>
+                </action>
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+                <action icon="flag_green" type="if" />
+              </_children>
+              <action></action>
+            </_children>
+            <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="else">
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+                <action icon="flag_green" type="else" />
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+                <action call="" icon="tune" tempo="5" text="R23 R24">
+                  <_sequence abbr="R23" bars="0" class="Scribbler_SoundBite" color="blue" comment="Bot Talk 3" group="Effects" notelength="1/4" notetranspose="0" tremolo="0">
+                    <_notes dmult="1" duration="90" fmult="1" frequency="2500" type="note" />
+                    <_notes dmult="1" duration="150" fmult="1" frequency="3000" type="note" />
+                    <_notes dmult="1" duration="70" fmult="1" frequency="1050" type="note" />
+                    <_notes dmult="1" duration="100" fmult="1" frequency="1460" type="note" />
+                  </_sequence>
+                  <_sequence abbr="R24" bars="0" class="Scribbler_SoundBite" color="cyan" comment="Bot Talk 4" group="Effects" notelength="1/4" notetranspose="0" tremolo="0">
+                    <_notes dmult="1" duration="50" fmult="1" frequency="2400" type="note" />
+                    <_notes dmult="1" duration="90" fmult="1" frequency="2000" type="note" />
+                    <_notes dmult="1" duration="120" fmult="1" frequency="1200" type="note" />
+                    <_notes dmult="1" duration="70" fmult="1" frequency="2800" type="note" />
+                  </_sequence>
+                </action>
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+                <action icon="flag_green" type="else" />
+              </_children>
+              <action></action>
+            </_children>
+            <action></action>
+          </_children>
+          <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+            <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+                <action icon="coin_heads" text="" type="if" />
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+                <action call="" icon="tune" tempo="5" text="R22 R23">
+                  <_sequence abbr="R22" bars="0" class="Scribbler_SoundBite" color="purple" comment="Bot Talk 2" group="Effects" notelength="1/4" notetranspose="0" tremolo="0">
+                    <_notes dmult="1" duration="90" fmult="1" frequency="2000" type="note" />
+                    <_notes dmult="1" duration="120" fmult="1" frequency="1200" type="note" />
+                    <_notes dmult="1" duration="68" fmult="1" frequency="560" type="note" />
+                    <_notes dmult="1" duration="100" fmult="1" frequency="3000" type="note" />
+                  </_sequence>
+                  <_sequence abbr="R23" bars="0" class="Scribbler_SoundBite" color="blue" comment="Bot Talk 3" group="Effects" notelength="1/4" notetranspose="0" tremolo="0">
+                    <_notes dmult="1" duration="90" fmult="1" frequency="2500" type="note" />
+                    <_notes dmult="1" duration="150" fmult="1" frequency="3000" type="note" />
+                    <_notes dmult="1" duration="70" fmult="1" frequency="1050" type="note" />
+                    <_notes dmult="1" duration="100" fmult="1" frequency="1460" type="note" />
+                  </_sequence>
+                </action>
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+                <action icon="flag_green" type="if" />
+              </_children>
+              <action></action>
+            </_children>
+            <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="else">
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+                <action icon="flag_green" type="else" />
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+                <action call="" icon="tune" tempo="5" text="R21 R24">
+                  <_sequence abbr="R21" bars="0" class="Scribbler_SoundBite" color="magenta" comment="Bot Talk 1" group="Effects" notelength="1/4" notetranspose="0" tremolo="0">
+                    <_notes dmult="1" duration="100" fmult="1" frequency="2300" type="note" />
+                    <_notes dmult="1" duration="50" fmult="1" frequency="1500" type="note" />
+                    <_notes dmult="1" duration="90" fmult="1" frequency="2000" type="note" />
+                    <_notes dmult="1" duration="120" fmult="1" frequency="1670" type="note" />
+                  </_sequence>
+                  <_sequence abbr="R24" bars="0" class="Scribbler_SoundBite" color="cyan" comment="Bot Talk 4" group="Effects" notelength="1/4" notetranspose="0" tremolo="0">
+                    <_notes dmult="1" duration="50" fmult="1" frequency="2400" type="note" />
+                    <_notes dmult="1" duration="90" fmult="1" frequency="2000" type="note" />
+                    <_notes dmult="1" duration="120" fmult="1" frequency="1200" type="note" />
+                    <_notes dmult="1" duration="70" fmult="1" frequency="2800" type="note" />
+                  </_sequence>
+                </action>
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+                <action icon="flag_green" type="else" />
+              </_children>
+              <action></action>
+            </_children>
+            <action></action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="else">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <action></action>
+        </_children>
+        <action></action>
+      </_children>
+      <_children active="1" activeout="0" call="purple" class="Scribbler_PauseTile" subclass="">
+        <action call="purple" icon="pause" text="0.020s" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_end">
+        <action></action>
+      </_children>
+      <action></action>
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_green" />
+    </_children>
+    <action></action>
+    <callsto purple="1" />
+  </_children>
+  <_children active="1" activecalls="1" activeout="1" class="Scribbler_Subroutine" color="purple" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_purple" />
+    </_children>
+    <_children active="1" activeout="1" class="Scribbler_Loop" subclass="">
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_begin">
+        <action reps="0" />
+      </_children>
+      <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="stall" text="" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_LedTile" subclass="">
+            <action>
+              <_states>on</_states>
+              <_states>on</_states>
+              <_states>on</_states>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_stop" left="  0" right="  0" text="0:0 1.00s" timer="1.00" type="set" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+            <action call="" icon="tune" tempo="5" text=":-o">
+              <_sequence abbr=":-o" bars="0" class="Scribbler_SoundBite" color="red" comment="Uh oh!" group="Effects" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes type="loopbegin">
+                  <_reps>1</_reps>
+                  <_reps>15</_reps>
+                  <_reps>1</_reps>
+                </_notes>
+                <_notes dmult="1" duration="5" fmult="1" frequency="1000" type="pulse" />
+                <_notes type="loopend" />
+                <_notes dmult="1" duration="100" fmult="1" frequency="0" type="note" />
+                <_notes type="loopbegin">
+                  <_reps>1</_reps>
+                  <_reps>25</_reps>
+                  <_reps>1</_reps>
+                </_notes>
+                <_notes dmult="1" duration="8" fmult="1" frequency="1000" type="pulse" />
+                <_notes type="loopend" />
+              </_sequence>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_rev" left="-50" right="-50" text="-50:-50 1.15s" timer="1.15" type="set" />
+          </_children>
+          <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+            <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+                <action icon="coin_heads" text="" type="if" />
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+                <action call="" icon="move_rot_right" left=" 50" right="-50" text="50:-50 0.95s" timer="0.95" type="set" />
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+                <action icon="flag_green" type="if" />
+              </_children>
+              <action></action>
+            </_children>
+            <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+                <action icon="flag_green" type="else" />
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+                <action call="" icon="move_rot_left" left="-50" right=" 50" text="-50:50 0.70s" timer="0.70" type="set" />
+              </_children>
+              <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+                <action icon="flag_green" type="else" />
+              </_children>
+              <action></action>
+            </_children>
+            <action></action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="obstacle_wr" text="" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_LedTile" subclass="">
+            <action>
+              <_states>on</_states>
+              <_states>off</_states>
+              <_states>off</_states>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_rot_right" left=" 50" right="-50" text="50:-50 0.55s" timer="0.55" type="set" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="obstacle_ww" text="" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_LedTile" subclass="">
+            <action>
+              <_states>on</_states>
+              <_states>off</_states>
+              <_states>on</_states>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_rev" left="-50" right="-50" text="-50:-50 0.70s" timer="0.70" type="set" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_rot_right" left=" 50" right="-50" text="50:-50 1.00s" timer="1.00" type="set" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="obstacle_rw" text="" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_LedTile" subclass="">
+            <action>
+              <_states>off</_states>
+              <_states>off</_states>
+              <_states>on</_states>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_MotionTile" subclass="">
+            <action call="" icon="move_rot_left" left="-51" right=" 51" text="-51:51 0.60s" timer="0.60" type="set" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="0.4" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_LedTile" subclass="">
+            <action>
+              <_states>off</_states>
+              <_states>off</_states>
+              <_states>off</_states>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_LoopExitTile" subclass="exit">
+            <action icon="exit" />
+          </_children>
+          <_children active="0.4" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <action></action>
+        </_children>
+        <action></action>
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_end">
+        <action></action>
+      </_children>
+      <action></action>
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_purple" />
+    </_children>
+    <action></action>
+    <callsfrom green="1" />
+    <callsto></callsto>
+  </_children>
+</opt>

@@ -1,0 +1,239 @@
+' {$STAMP BS2}
+' {$PBASIC 2.5}
+
+'Scribbler include code version 2007.07.25
+
+'---[Pin Definitions]----------------------------------------------------------
+
+Program         PIN 0
+LWhisker        PIN 1
+RWhisker        PIN 2
+LightLeft       PIN 3
+LightRight      PIN 4
+ObsTxLeft       PIN 5  'IR Sensor
+ObsRxLeft       PIN 6  'IR Sensor
+ObsTxRight      PIN 7  'IR Sensor
+ObsRxRight      PIN 8  'IR Sensor
+Servo1          PIN 9
+Servo2          PIN 10
+Servo3          PIN 11
+MotorRight      PIN 12
+MotorLeft       PIN 13
+TripDrain       PIN 14
+Speaker         PIN 15
+'---[Pin Initializations]------------------------------------------------------
+OUTS = %0000000111100111   'NOTE: pin order is reversed. Pin 15 is first, Pin 0 is last
+DIRS = %1111111100011000   'Set to turn lights off in 3&4 at startup
+
+
+
+
+'---[Global Variables]---------------------------------------------------------
+
+
+ScrW0           VAR Word
+ScrW1           VAR Word
+
+ScrB0           VAR ScrW0.LOWBYTE
+ScrB1           VAR ScrW0.HIGHBYTE
+ScrB2           VAR ScrW1.LOWBYTE
+ScrB3           VAR ScrW1.HIGHBYTE
+
+ScrN0           VAR ScrB0.LOWNIB
+ScrN1           VAR ScrB0.HIGHNIB
+ScrN2           VAR ScrB1.LOWNIB
+ScrN3           VAR ScrB1.HIGHNIB
+
+ScrT0           VAR ScrB3.BIT0
+ScrT1           VAR ScrB3.BIT1
+ScrT2           VAR ScrB3.BIT2
+ScrT3           VAR ScrB3.BIT3
+ScrT4           VAR ScrB3.BIT4
+ScrT5           VAR ScrB3.BIT5
+ScrT6           VAR ScrB3.BIT6
+ScrT7           VAR ScrB3.BIT7
+
+Moves           VAR ScrB0
+
+MoveRight       VAR ScrB0
+MoveLeft        VAR ScrB1
+MoveTime        VAR ScrB2
+
+CoinFlip        VAR Word
+
+Obstacles       VAR Byte  'B6
+
+RightLight      VAR B6
+LeftLight       VAR B8
+
+'RefLights       VAR B9
+
+RefRightLight   VAR B9
+RefLeftLight    VAR B11
+
+Readout         VAR Word  'for debugging purposes
+leftstop        VAR Byte
+rightstop       VAR Byte
+
+Counter0        VAR Byte
+Counter1        VAR Byte
+Counter2        VAR Byte
+Counter3        VAR Byte
+Counter4        VAR Byte
+Counter5        VAR Byte
+
+ResetCount      VAR Nib   'Was ScrN0. Changed for persistence.
+
+Reserved0       VAR Nib
+Reserved1       VAR Byte
+Reserved2       VAR Byte
+
+Counter6        VAR Reserved1
+Counter7        VAR Reserved2
+
+Motors          VAR Byte
+
+RightMotor      VAR Byte    'byte
+LeftMotor       VAR Byte    'byte
+
+LineCount       VAR Nib
+ObstacleCount   VAR Nib
+'StallCount      VAR B24.HIGHNIB
+
+'LeftLine        VAR B24.BIT3
+'RightLine       VAR B24.BIT2
+
+LeftObstacle    VAR Obstacles.BIT1
+RightObstacle   VAR Obstacles.BIT0
+
+Flags           VAR Byte
+
+Flag_green      VAR Flags.BIT7
+Flag_yellow     VAR Flags.BIT6
+Flag_orange     VAR Flags.BIT5
+Flag_red        VAR Flags.BIT4
+Flag_magenta    VAR Flags.BIT3
+Flag_purple     VAR Flags.BIT2
+Flag_blue       VAR Flags.BIT1
+Stalled         VAR Flags.BIT0
+
+'---[Protect Calibration DATA in EEPROM]---------------------------------------
+
+  DATA @0, (16)
+
+'---[COUNT Reset BUTTON Presses]-----------------------------------------------
+
+'  READ 15, ResetCount
+'  WRITE 15, ResetCount + 1 MAX 15
+'  PAUSE 500
+'  WRITE 15, 0
+
+'---[Variable Initialization]--------------------------------------------------
+
+LeftMotor = 128
+RightMotor = 128
+
+'+++++++++++==Tripdrain++++++++++
+  HIGH 14
+  PAUSE 5
+  LOW 14
+
+
+'---[Check Calibration Values and Repair]--------------------------------------
+
+'FOR ScrN1 = 0 TO 4 STEP 4
+ ' ScrB1 = 0
+'  FOR ScrB2 = ScrN1 TO ScrN1 + 3
+'    READ ScrB2, ScrB3
+'    ScrB1 = ScrB1 + ScrB3
+'  NEXT
+'  IF (ScrB1) THEN
+'    FOR ScrB2 = ScrN1 TO ScrN1 + 3
+'      WRITE ScrB2, 128 << ScrN1
+'    NEXT
+'  ENDIF
+'NEXT
+
+'---[Initialize Random Number Generator]---------------------------------------
+
+'HIGH LightLeft
+'PAUSE 1
+'RCTIME LightLeft, 1, CoinFlip
+
+'---[Main Program: Green]------------------------------------------------------
+
+Green:
+  DO
+    GOSUB ReadLight
+    IF (LeftLight - RightLight + 255 >= 265) THEN
+      GOSUB Yellow
+    ELSE
+      GOSUB Orange
+    ENDIF
+    PAUSE 520
+    LeftMotor = 228: RightMotor = 228: MoveTime = 26
+    GOSUB MotorSet
+    PAUSE 1000
+  LOOP
+END
+
+'---[Subroutine: Yellow]-------------------------------------------------------
+
+Yellow:
+  DEBUG "Left Turn, left light is: ", DEC5 LeftLight, "     Right light is: ", DEC5 RightLight, CR
+  LeftMotor = 28: RightMotor = 228: MoveTime = 4
+  GOSUB MotorSet
+RETURN
+
+'---[Subroutine: Orange]-------------------------------------------------------
+
+Orange:
+  DEBUG "Right Turn, left light is: ", DEC5 LeftLight, "     Right Light is: ", DEC5 RightLight, CR
+  LeftMotor = 228: RightMotor = 28: MoveTime = 4
+  GOSUB MotorSet
+RETURN
+
+'---[Set Motor Speeds]---------------------------------------------------------
+
+
+
+MotorSet:
+    'READ 2, rightstop
+    rightstop = 85      'set for servos shipped to Peru
+    readout =  ((650 + rightstop - 128) + RightMotor)
+    'readout =  ((760 -128) + RightMotor)
+    'DEBUG "Right servo gets   ", DEC readout,"  stop= ",? rightstop, CR
+    'READ 1, leftstop
+    leftstop = 85       'set for servos shipped to Peru
+    readout =  ((650 + leftstop + 128) - LeftMotor)
+    'readout = ((748 + 128) - LeftMotor)
+    'DEBUG "Left servo gets   ", DEC readout,"  stop= ",? leftstop, CR
+  FOR Counter6 = 0 TO MoveTime
+    'DEBUG ?counter6,?movetime,CR
+    PULSOUT MotorRight, ((650 + rightstop - 128) + RightMotor) 'ScrB0 is calibrated value from eeprom
+    'PULSOUT MotorRight, ((760 -128) + RightMotor) 'First version that worked
+
+    PULSOUT MotorLeft, ((650 + leftstop + 128) - LeftMotor)  'ScrB1 is calibrated value from eeprom
+    'PULSOUT MotorLeft, ((748 + 128) - LeftMotor)  'First version that worked
+  PAUSE 5
+  NEXT
+RETURN
+
+
+
+'---[Read Light Sensors]-------------------------------------------------------
+
+ ReadLight:
+    HIGH LightLeft
+    PAUSE 3
+    RCTIME LightLeft,1,W0
+    LeftLight = 255 - (W0 / 19 MAX 255)
+
+    HIGH LightRight
+    PAUSE 3
+    RCTIME LightRight,1,W0
+    RightLight = 255 - (W0 / 19 MAX 255)
+RETURN
+
+
+'---[End of Program]-----------------------------------------------------------

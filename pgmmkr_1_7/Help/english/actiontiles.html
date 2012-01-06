@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Language" content="en-us">
+		<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">	
+		<title>Scribbler Help</title>
+		<link REL="stylesheet" TYPE="text/css" HREF="../styles.css">
+	</head>
+	<body leftmargin="10" rightmargin="10" marginwidth="0" marginheight="0" topmargin="10" class = "graph">
+		<table id = "ActionTiles"><tr><td>
+			<img src = "../images/scribbler.gif"/ class = "left">
+			<div class = "doc1">Action Tiles</div>
+		</td></tr><tr><td>		
+			<div id = "LEDTile"><p class = "doc2">LED Tile</p>
+			<div>
+				<img src = "../images/ledtile.gif" class = "left">
+				The most-used program tiles are <b>action tiles</b>. These are the tiles that actually cause the Scribbler to <i>do</i> something. All action tiles are
+				colored green, like the LED tile you became familiar with in the <a href = "gettingstarted.html#LEDTile">previous page</a>. And like the LED tile, each action
+				tile has a corresponding tool button on the lefthand side of the screen, as well as a configuration box that pops up when you insert one or edit it again later.
+			</div>
+		</td></tr><tr><td>		
+			<div id = "MotionTile"><p class = "doc2">Motion Tile</p>
+				<img src = "../images/motiontile.gif" class = "left">
+				The <b>motion tile</b> is what you use to command the Scribbler to move or stop. It can be as simple as the top tile in the example at the left suggests (i.e.
+				move forward at three-quarters speed) or more complex, like the second example (rotate right at about half-speed for 1.15 seconds, then stop and call the "yellow"
+				subroutine).
+			</div>
+		</td></tr><tr><td>		
+			<div>
+				<img src = "../images/motionedit.gif" class = "left">
+				The motion tile edit control box allows adjustment of the Scribbler's velocity in numerous ways, as the diagram illustrates. It also allows you to choose how
+				long you want the Scribbler to move in the chosen manner. This time can be selected in 0.05-second increments, up to 5 seconds. If you choose a time,
+				the Scribbler will run for that amount of time and then stop. If you don't choose a time (i.e. time = 0), the Scribbler will run at the chosen speed indefinitely,
+				until commanded to do otherwise.<p>
+				There are three types of motion, <b>set</b> (shown here as "="), <b>increment</b> (+), and <b>multiply</b> (&times;). These are chosen using the motion type select
+				box. Increment adds the left and right values to the current wheel velocities, but won't go below <nobr>-100</nobr> or above +100. Multiply multplies the left and right wheel
+				velocities by the chosen values (in the range <nobr>-1.25</nobr> to +1.25). If using increment or multiply, you cannot also select a time, because it's assumed that you're adjusting
+				motions having an indefinite duration.<p>
+				As with some other action tiles, the motion tile also allows you to call a subroutine once the programmed action is complete. Which subroutine to call is selected
+				using the multiple-choice button with the gear on it. (<a href = "subroutines.html">Subroutines</a> are discussed in a later section.) All multiple-choice buttons have
+				three little yellow squares in their upper-righthand corner. You can cycle through the choices by clicking the button repeatedly.				
+			</div>
+		</td></tr><tr><td>		
+			<div id = "PauseTile"><p class = "doc2">Pause Tile</p>
+				<img src = "../images/pausetile.gif" class = "left">
+				The <b>pause tile</b> is used to suspend the Scribbler's program temporarily for periods ranging from 0.001 second to 60 seconds. It will not change the Scribbler's
+				state, however. If the Scribbler is moving, it will continue to move during the pause. If any of its LEDs are on, they will stay on.
+			</div>
+		</td></tr><tr><td>		
+			<div>
+				<img src = "../images/pauseedit.gif" class = "left">
+				The amount of time to wait is chosen by moving the hourglass slider in the pause tile edit control box up and down. The pause tile also includes a provision to call
+				a subroutine after the chosen duration is up.
+			</div>
+		</td></tr><tr><td>		
+			<div id = "SoundTile"><p class = "doc2">Sound Tile</p>
+				<img src = "../images/soundtile.gif" class = "left">
+				The <b>sound tile</b> is used to activate the Scribbler's speaker for playing short tunes, such as the bugle call "Charge!" in the first example at the left,
+				and sound effects, such as spelling "HELP" in Morse code in the second example. The program comes with a library of soundbites which can be strung together in various
+				sequences to obtain the desired sounds. It is also possible for the sound tile to call a subroutine when it is finished playing a sound.
+			</div>
+		</td></tr><tr><td>		
+			<div>
+				<img src = "../images/soundedit.gif" class = "left">
+				Soundbites are copied from the library into the sound tile by <b>click</b>ing on them. You can also <b>right-click-and-hold</b> on any soundbite to hear what it sounds like and to see its
+				full name displayed. Soundbites are inserted in sequence, beginning to the right of the selected tile (designated with the light blue outline). You can select any
+				soundbite in the tile by clicking on it. You can also select the position <i>ahead of the first soundbite</i> by clicking to its left on the green tile image. This
+				allows you to insert soundbites in the first position, ahead of all the others. To delete a soundbite, first click on it to select it, then click on the trashcan button.<p>
+				Once you've assembled your sound sequence, you can play it back on your PC to test it by clicking the play button. The play button arrow will light up and remain lighted
+				until the sequence has played back or until you click it again to stop it. You can adjust the overall tempo of your sequence before testing by using the slider at the
+				top of the tile (the one with the turtle and racehorse). There's also a volume control for the PC that you can adjust during playback. The tempo control will also
+				affect sounds coming from the Scribbler when your program is uploaded. The volume control is only for the PC.<p>
+				In addition to the overall tempo adjustment, you can also adjust the tempo and frequency of individual soundbites in the sequence. This is done using the spinboxes to
+				the left of the play button. The first controls the duration of the soundbite, 1/4 being the default duration. The second allows you to shift the frequency of the
+				soundbite down an octave, or up by one or two octaves. These controls are used mainly for the individual note soundbites in the keyboard section of the library, so
+				you can compose your own simple tunes. But they will work for any of the soundbites in the library.<p>
+				<b>Important note:</b> <i>Use sound sparingly!</i> Long sound sequences use up enormous amounts of the Scribbler's program memory, and it's all too easy not to have
+				any left for the other things the Scribbler can do.
+			</div>
+		</td></tr><tr><td>		
+			<div id = "FlagTile"><p class = "doc2">Flag Tile</p>
+				<img src = "../images/flagtile.gif" class = "left">
+				The <b>flag tile</b> is used to signal other parts of your program that some event occurred. There are seven different-colored flags, and the flag tile
+				allows any one of them to be raised or lowered. Later, you can use a conditional tile to check the state of a given flag and react accordingly. As in the second
+				tile at the left, the flag tile can also call a subroutine once it's raised or lowered a flag.
+			</div>
+		</td></tr><tr><td>		
+			<div>
+				<img src = "../images/flagedit.gif" class = "left">
+				The edit box for the flag tile is a simple one. It has multiple-choice buttons for the flag action and for which subroutine to call, if any.
+			</div>
+		</td></tr><tr><td>		
+			<div id = "CallTile"><p class = "doc2">Call Subroutine Tile</p>
+				<img src = "../images/calltile.gif" class = "left">
+				The <b>call subroutine tile</b> is used to call a subroutine without any other intervening action. Its edit box is simply a multiple-choice button for choosing the
+				subroutine to call.
+			</div>
+		</td></tr><tr><td>		
+			<div id = "ObserveSensorTile"><p class = "doc2">Observe Sensor Tile</p>
+				<img src = "../images/observesensortile.gif" class = "left">
+				The <b>observe sensor tile</b> is used to query one of the Scribbler's sensors before using it in a conditional. There are currently six sensors that can be
+				independently observed. Starting in the first column at left, from top to bottom, they are: the <b>line sensor</b>, the <b>barcode sensor</b> (just the line sensor given a different
+				job to do), and the <b>obstacle sensor</b>. In the second column are the <b>crash (stall) sensor</b>, the <b>light sensor</b>, and the <b>coin toss</b>. Each of these sensors is discussed in detail
+				in the conditional tile section.<p>
+				Once an observation is made, it remains in effect until another one is made. That way, you can use a single observation in several conditionals without disturbing it.<p>
+				In most cases, observing a sensor with the observe sensor tile is <b><i>optional</i></b>. This is because the Scribbler Program Maker defaults to a
+				mode wherein it figures out where the observations need to take place and inserts them into your program for you. The rule is this: If there is no sensor read inside a loop
+				or subroutine ahead of a conditional in which that sensor is used, one will be put there for you. You won't see it in your program, but it will be in the code uploaded to the
+				Scribbler. However, if you need control over when the observations take place in your program you can insert them yourself.<p>
+				If you want to modify the automatic insertion behavior of the program, you can do so by editing the file <b>scribbler.ini</b>. It's found in the main
+				Scribbler program directory. Below are the various options, the factory-set value being <b>2</b>:<p>
+			</div>
+		</td></tr><tr><td>		
+			<div><blockquote>
+				<table border = "1" cellpadding = "5"><tr>
+					<td><nobr><code>autoreadsensors = 0</code></nobr></td>
+					<td>Don't automatically insert <i>any</i> sensor reads into the program.</td>
+				</tr><tr>
+					<td><nobr><code>autoreadsensors = 1</code></nobr></td>
+					<td>Insert sensor reads into the program automatically <i>unless there is a least one inserted manually</i>. Then don't insert any.</td>
+				</tr><tr>
+					<td><nobr><code>autoreadsensors = 2</code></nobr></td>
+					<td>Insert sensor reads into the program automatically whereever they are needed and not manually inserted.</td>
+				</tr></table></blockquote><p>
+				Once you've created and saved a program with one of these settings, the setting current when the program was created will be saved with the program. That way, if the
+				setting is later edited, the program will continue to work as if the original setting were in effect.
+			</div>
+		</td></tr><tr><td>		
+			<div id = "ComputeTile"><p class = "doc2">Computation Tile</p>
+				<img src = "../images/computetile.gif" class = "left">
+				The <b>computation tile</b> is currently used to carry out computations on the light sensor readings, but other uses may be added as time goes on. There are six
+				computations available, each involving a parallel, reference set of light sensor readings, which can be used to hold calibration information or the results
+				of prior sensor readings. The current light sensor readings are indicated in blue; the reference readings, in red. These are illustrated at left, reading down the
+				left column first, then the right.<p>
+				In the first column are computations that change the values of the reference readings. The first simply <b>zeroes</b> the reference readings.
+				The second <b>reads</b> the reference readings from the calibration buffer in ROM. The third <b>copies</b> the current readings to the reference readings.<p>
+				The computations in the second column change the values of the current readings by replacing them with the results of an actual computation. The first <b>subtracts</b>
+				the reference readings from the current readings. When the difference is less than zero, the result will equal zero. The second does the reverse: it <b>negates</b> the current
+				reading, then <b>adds</b> the reference reading. Again, results less than zero are set to zero. The third takes the <b>absolute value</b> of the difference between the current and
+				reference readings. This result will, of course, always be a positive number and is useful for detecting changes in light intensities from one moment to the next.
+			</div>	
+		</td></tr></table>
+  </body>
+</html>

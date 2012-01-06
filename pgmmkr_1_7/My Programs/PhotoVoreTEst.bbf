@@ -1,0 +1,48 @@
+<!-- Generated code: DO NOT EDIT! Any changes will void this file. -->
+<!-- 419870569427EC21495618CBFCDD71A6 -->
+<opt autoreadsensors="2" class="Scribbler_Worksheet" version="1.0">
+  <_children active="1" activecalls="0" activeout="1" class="Scribbler_Subroutine" color="green" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_green" />
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+      <action call="" icon="tune" tempo="5" text="Ch!">
+        <_sequence abbr="Ch!" bars="1" class="Scribbler_SoundBite" color="red" comment="Charge!" group="Bugle" notelength="1/4" notetranspose="0" tremolo="0">
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="391.995435981749" type="note" />
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="523.251130601197" type="note" />
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="659.25511382574" type="note" />
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="783.990871963499" type="note" />
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="0" type="note" />
+          <_notes dmult="1" duration="187.5" fmult="1" frequency="659.25511382574" type="note" />
+          <_notes dmult="6" duration="187.5" fmult="1" frequency="783.990871963499" type="note" />
+        </_sequence>
+      </action>
+    </_children>
+    <_children active="1" activeout="1" class="Scribbler_Loop" subclass="">
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_begin">
+        <action reps="0" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_SensorReadTile" subclass="">
+        <action icon="light_lll" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_ComputeTile" subclass="">
+        <action icon="lightcurr" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_SensorReadTile" subclass="">
+        <action icon="light_lll" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_ComputeTile" subclass="">
+        <action icon="lightabsdif" />
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_end">
+        <action></action>
+      </_children>
+      <action></action>
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_green" />
+    </_children>
+    <action></action>
+    <callsto></callsto>
+  </_children>
+</opt>

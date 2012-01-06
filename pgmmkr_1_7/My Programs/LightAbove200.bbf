@@ -1,0 +1,67 @@
+<!-- Generated code: DO NOT EDIT! Any changes will void this file. -->
+<!-- F6455C6C210B422A5871EA646F16C5EA -->
+<opt autoreadsensors="2" class="Scribbler_Worksheet" version="1.0">
+  <_children active="1" activecalls="0" activeout="1" class="Scribbler_Subroutine" color="green" counters="0" subclass="">
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_begin">
+      <action icon="gear_green" />
+    </_children>
+    <_children active="1" activeout="1" class="Scribbler_Loop" subclass="">
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_begin">
+        <action reps="0" />
+      </_children>
+      <_children active="1" activeout="1" class="Scribbler_ConditionalArray" subclass="">
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_begin">
+            <action icon="light_lxx" text="200+" type="if" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_SequencerTile" subclass="">
+            <action call="" icon="tune" tempo="5" text="LaC">
+              <_sequence abbr="LaC" bars="2" class="Scribbler_SoundBite" color="yellow" comment="La Cucaracha" group="Song" notelength="1/4" notetranspose="0" tremolo="0">
+                <_notes type="loopbegin">
+                  <_reps>1</_reps>
+                  <_reps>2</_reps>
+                  <_reps>1</_reps>
+                </_notes>
+                <_notes dmult="1" duration="152.5" fmult="1" frequency="391.995435981749" type="note" />
+                <_notes dmult="1" duration="35" fmult="1" frequency="0" type="note" />
+                <_notes dmult="1" duration="152.5" fmult="1" frequency="391.995435981749" type="note" />
+                <_notes dmult="1" duration="35" fmult="1" frequency="0" type="note" />
+                <_notes dmult="1" duration="187.5" fmult="1" frequency="391.995435981749" type="note" />
+                <_notes dmult="3" duration="187.5" fmult="1" frequency="523.251130601197" type="note" />
+                <_notes condition="1" type="if" />
+                <_notes dmult="2" duration="187.5" fmult="1" frequency="659.25511382574" type="note" />
+                <_notes condition="2" type="elseif" />
+                <_notes dmult="4" duration="187.5" fmult="1" frequency="659.25511382574" type="note" />
+                <_notes type="endif" />
+                <_notes type="loopend" />
+              </_sequence>
+            </action>
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="if_end">
+            <action icon="flag_green" type="if" />
+          </_children>
+          <action></action>
+        </_children>
+        <_children active="1" activeout="1" class="Scribbler_ConditionalBlock" subclass="if">
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_begin">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <_children active="1" activeout="0" class="Scribbler_ConditionalTile" subclass="else_end">
+            <action icon="flag_green" type="else" />
+          </_children>
+          <action></action>
+        </_children>
+        <action></action>
+      </_children>
+      <_children active="1" activeout="0" class="Scribbler_LoopTile" subclass="loop_end">
+        <action></action>
+      </_children>
+      <action></action>
+    </_children>
+    <_children active="1" activeout="0" class="Scribbler_SubroutineTile" subclass="sub_end">
+      <action icon="gear_green" />
+    </_children>
+    <action></action>
+    <callsto></callsto>
+  </_children>
+</opt>

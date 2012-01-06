@@ -67,8 +67,8 @@ RightLight      VAR B6
 LeftLight       VAR B7
 
 Readout         VAR W3  'for debugging purposes
-leftstop        VAR B8
-rightstop       VAR B9
+leftstop        VAR B8  'obsolete
+Trim            VAR B9
 
 Counter0        VAR B10
 Counter1        VAR B11
@@ -167,24 +167,19 @@ GOTO MotorSet
 '%%section:MotorSet
 '%%heading:Set Motor Speeds
 MotorSet:
-    READ 2, rightstop
-    'rightstop = 85      'set for servos shipped to Peru
-    readout =  ((650 + rightstop - 128) + RightMotor)
-    'readout =  ((760 -128) + RightMotor)
-    'DEBUG "Right servo gets   ", DEC readout,"  stop= ",? rightstop, CR
-    READ 1, leftstop
-    'leftstop = 85       'set for servos shipped to Peru
-    readout =  ((650 + leftstop + 128) - LeftMotor)
-    'readout = ((748 + 128) - LeftMotor)
-    'DEBUG "Left servo gets   ", DEC readout,"  stop= ",? leftstop, CR
   FOR Counter6 = 0 TO MoveTime
     'DEBUG ?counter6,?movetime,CR
-    PULSOUT MotorRight, ((650 + rightstop + 128) - RightMotor) 'ScrB0 is calibrated value from eeprom
-    PAUSE 15
+    'readout =         ((622 + trim + 100) - (RightMotor))
+   ' DEBUG "Right = ", DEC5 readout, CR
+    PULSOUT MotorRight, ((622 + trim + 100) - (RightMotor)) 'ScrB0 is calibrated value from eeprom
+    'PAUSE 15
     'PULSOUT MotorRight, ((760 -128) + RightMotor) 'First version that worked
 
-    PULSOUT MotorLeft, ((650 + leftstop - 128) + LeftMotor)  'ScrB1 is calibrated value from eeprom
-    PAUSE 15
+    'readout =          ((622 + trim - 100) + (LeftMotor*/$0180))
+    'DEBUG "Left = ", DEC5 readout, CR
+    PULSOUT MotorLeft, ((622 + trim - 100) + (LeftMotor))  'ScrB1 is calibrated value from eeprom
+
+    'PAUSE 15
     'PULSOUT MotorLeft, ((748 + 128) - LeftMotor)  'First version that worked
     'pause 5 may control the timing of the servos
   PAUSE 20

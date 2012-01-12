@@ -1,5 +1,6 @@
 Program maker 1_7
 
+1/12/2012 Added changes to the include (TESTinclude.bs2) that will allow for a different scaling of the light sensor)
 1/6/2012 12-2pm worked on debugging the new trim feature and testing.  It appears to be ready for Bill to test
 1/5/2012 3-5pm worked on =(trim variable) and +(set max/min to 200/0)
 start: 12/28/2011
@@ -11,7 +12,7 @@ Stable release version that needs few minor tweaks
 + done
 todo:	+Trim variable (byte) (1/6)
 	+set max/min to 200/0 (1/5)
-	+ Test the trim variable by "calibrating" with it (1/6)
+	+Test the trim variable by "calibrating" with it (1/6)
 
 done: 
 	1-5-2012
@@ -25,3 +26,6 @@ done:
 	Testing calibration with the Trim feature, it appears to be functional
 	The trim range on the computer is from L127 to R127 with 0 as the center (0 - 254 on the pbasic code)
 	changed the GUI per Joe's specs.  It looks much better
+
+	1-12-2012
+	Hoping to figure out a better way to rescale the light sensor readings. There is a test version in that Bill can play with

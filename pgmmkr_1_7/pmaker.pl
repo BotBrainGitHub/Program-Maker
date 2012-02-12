@@ -3,7 +3,7 @@
 #12/13/10 Joe: reordered buttons on left of worksheet
 use strict;
 #use lib '/jobs/perl/scribbler'; #Must comment out for perl2exe.
-use lib '/perl/pgmmkr_1_6'; #must be the name of the folder
+use lib '/perl/Working Directory/pgmmkr_1_7/pgmmkr_1_7'; #must be the name of the folder
 use Carp;
 use Tk;
 use Tk::ToggleButton;

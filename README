@@ -1,5 +1,6 @@
 Program maker 1_7
 
+2/12/2012 Added changes to the conditional tile and motion tile, new help files per Bill
 1/12/2012 Added changes to the include (TESTinclude.bs2) that will allow for a different scaling of the light sensor)
 1/6/2012 12-2pm worked on debugging the new trim feature and testing.  It appears to be ready for Bill to test
 1/5/2012 3-5pm worked on =(trim variable) and +(set max/min to 200/0)
@@ -29,3 +30,8 @@ done:
 
 	1-12-2012
 	Hoping to figure out a better way to rescale the light sensor readings. There is a test version in that Bill can play with
+
+	2-12-2012
+	The conditional tile had a unicode character <= in it, I remove it so it will now save
+	I redid the motion tile so that it keeps track of individual trim values (needed for saving)
+	Bill gave me new help files to make

@@ -47,6 +47,7 @@ sub code {
         {
             $returnvalue = $returnvalue . ") THEN";
         }
+		print $returnvalue . "\n";
         return $returnvalue;
 }
 sub _ircondition {
@@ -285,7 +286,8 @@ tie my %Sensors, 'Tie::IxHash', (
                 maxvalue => 255,
                 onselect => \&_evtSelectLight,
                 onslider => \&_evtSlideLight,
-                text => sub{"\x{2265}$SliderValue"},
+                #text => sub{"\x{2265}$SliderValue"},
+				text => sub{"$SliderValue"},
                 tip => 'Light sensors',
                 slidertip => 'Set threshold brightness level.',
         },

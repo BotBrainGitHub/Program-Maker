@@ -4,30 +4,30 @@
 		<meta http-equiv="Content-Language" content="en-us">
 		<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">	
 		<title>Scribbler Help</title>
-		<link REL="stylesheet" TYPE="text/css" HREF="../styles.css">
+		<link REL="stylesheet" TYPE="text/css" HREF="styles.css">
 	</head>
 	<body leftmargin="10" rightmargin="10" marginwidth="0" marginheight="0" topmargin="10" class = "graph">
 		<table id = "Subroutines"><tr><td>
-			<img src = "../images/scribbler.gif"/ class = "left">
+			<img src = "program_maker.gif" width="287" height="64"/ class = "left">
 			<div class = "doc1">Subroutines</div>
 		</td></tr><tr><td>		
 			<div id = "SubroutineTiles"><p class = "doc2">Creating Subroutines</p>
-				<img src = "../images/subroutines.gif" class = "left">
+				<img border="0" src="subrou1.jpg" align="left" width="332" height="231">
 				<b>Subroutines</b> are semi-independent segments of your program that can be "called" from other parts of your program. When a subroutine is called, the calling
 				program temporarily suspends operation, and the subroutine takes over. When the subroutine is finished, it "returns" to the calling program, and the calling program
 				resumes where it left off.<p>
-				In the Scribbler Program Maker, you can have up to eight different subroutines, distinquished by color, including the main program, which is always <font class = "gr">green</font>. A subroutine
+				In the  Program Maker, you can have up to eight different subroutines, distinquished by color, including the main program, which is always <font class = "gr">green</font>. A subroutine
 				always begins with a <b>subroutine begin tile</b>, designated by a gear of the subroutine's color, and ends with a <b>subroutine end tile</b>, which contains a subroutine return.
 				Subroutines are always arrayed in order by their color. Beginning with the green main program, the colors are <font class = "gr">green</font>, <font class = "ye">yellow</font>,
 				<font class = "or">orange</font>, <font class = "rd">red</font>, <font class = "mg">magenta</font>, <font class = "pu">purple</font>, <font class = "bu">blue</font>,
 				and <font class = "cy">cyan</font>.
 				In the example to the left, there is the green main program and two subroutines, yellow and orange. The main program calls the yellow subroutine, which commands
-				the Scribbler to move forward, then returns. The orange subroutine is never called. That's why it's shown in a translucent, or <b>inactive</b>, state. When this program is
-				transferred to the Scribbler, the commands making up the orange subroutine will not be sent.
+				the robot to move forward, then returns. The orange subroutine is never called. That's why it's shown in a translucent, or <b>inactive</b>, state. When this program is
+				transferred to the robot, the commands making up the orange subroutine will not be sent.
 			</div>
 		</td></tr><tr><td>		
 			<div>
-				<img src = "../images/newsubroutine.gif" class = "left">
+				<img src = "newsubroutine.gif" class = "left" width="295" height="110">
 				There are two ways to add a subroutine to your program. First, you can simply click on the <b>add subroutine</b> button, as shown on the left. This brings up the
 				subroutine dialog box, which has one multiple-choice button for choosing the color of your subroutine. Any color which is not already in use can be selected in this way.
 				The second way to add a subroutine is simply to call it. When you insert a tile anywhere in your program that calls a subroutine not already in existence, that subroutine
@@ -36,14 +36,16 @@
 			</div>
 		</td></tr><tr><td>		
 			<div id = "ReturnTiles"><p class = "doc2">Return Tiles</p>
-				<img src = "../images/returntile.gif" class = "left">
+				<img border="0" src="subrou2.jpg" align="left" width="324" height="579">
 				<b>Return tiles</b> provide a way to return from a subroutine immediately, without having to go to the end. In the example on the left, the yellow subroutine constantly
-				checks for an obstruction on the left and none on the right, turning the Scribbler in increments. When the path ahead becomes clear, it commands the Scribbler to move
+				checks for an obstruction on the left and none on the right, turning the 
+              robot in increments. When the path ahead becomes clear, it commands the 
+              robot to move
 				forward and immediately returns.
 			</div>
 		</td></tr><tr><td>		
 			<div id = "Editing"><p class = "doc2">Editing Subroutines</p>
-				<img src = "../images/editsubroutine.gif" class = "left">
+				<img src = "editsubroutine.gif" class = "left" width="167" height="120">
 				When you select a subroutine to edit by clicking on its begin or end tile, the entire subroutine and all its contents are selected. By right-clicking, you can then
 				perform the usual cut, delete, or copy functions. These work a little differently for subroutines, however, than for other program elements. If the subroutine is <b>active</b>
 				and you try to delete it, the contents are deleted, but the begin and end tiles will remain. If the subroutine is <b>inactive</b>, you can delete the whole thing.<p>
@@ -57,21 +59,21 @@
 			</div>
 		</td></tr><tr><td>		
 			<div id = "Cutting"><p class = "doc2">Cutting and Pasting Calls</p>
-				<img src = "../images/cutcalls.gif" class = "left">
+				<img border="0" src="subrou3.jpg" align="left" width="391" height="296">
 				In the example to the left, two motion tiles, each calling a different subroutine, are about to be cut to the clipboard. Once this happens, the worksheet looks like this:<p>
-				<img src = "../images/aftercut.gif"><p>
+				<img src = "aftercut.gif" width="337" height="156"><p>
 				Notice that, since the calls to them are gone, both subroutines are now <b>inactive</b>. What we're going to do next is paste these two tiles into the yellow subroutine.				
 			</div>
 		</td></tr><tr><td>		
 			<div>
-				<img src = "../images/afterpaste.gif" class = "left">
+				<img border="0" src="subrou4.jpg" align="left" width="325" height="292">
 				But look what happened. The tile that once called the yellow subroutine appears to be calling a gray one. The reason for this is that a subroutine cannot call itself,
 				so the call to yellow would have been illegal. The call is changed to gray so you can see that there <i>used to be</i> a call there and to give you a chance to change it.
 				If you were to upload a program with grayed-out calls in it, those calls would be deleted entirely from your program, so as not to cause an error.
 			</div>
 		</td></tr><tr><td>		
 			<div id = "EndTiles"><p class = "doc2">End Tiles</p>
-				<img src = "../images/insertend.gif" class = "left">
+				<img border="0" src="subrou5.jpg" align="left" width="325" height="367">
 				<b>End tiles</b> provide a way to quit a program immediately, without having to go to the end. They can be inserted anywhere, whether in the main program, or in a
 				subroutine. When your program encounters an end tile, it quits, but any LEDs left burning will stay on, and any motors left running will continue to run.<p>
 				In the example to the left, the yellow subroutine is called repeatedly by the main program. The subroutine flips a coin. If it comes up "heads", it plays a little tune;

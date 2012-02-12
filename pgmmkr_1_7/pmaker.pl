@@ -83,7 +83,7 @@ my $ShowWindow = new Win32::API('user32', 'ShowWindow', 'NN', 'N');
 my $old_title = " " x 1024;
 $GetConsoleTitle->Call( $old_title, 1024 );
 my $hw = $FindWindow->Call( 0, $old_title );
-#$ShowWindow->Call( $hw, SW_HIDE );
+$ShowWindow->Call( $hw, SW_HIDE );
 
 my $mw = Tk::MainWindow->new(-width => 720, -height => 540);
 $mw->minsize(800,600);
@@ -139,11 +139,11 @@ my $MenuCommands = Tie::IxHash->new(
 #                tip => 'Restore the factory program.'
 #        },
 
-        calibrate => {
-                icon => 'calibrate',
-                onselect => sub {$Scribbler->worksheet->emitCalibrate('edit')},
-                tip => 'Upload the calibration program.'
-        },
+#        calibrate => {
+#                icon => 'calibrate',
+#                onselect => sub {$Scribbler->worksheet->emitCalibrate('edit')},
+#                tip => 'Upload the calibration program.'
+#        },
 
 #        monitor => {
 #                icon => 'monitor',

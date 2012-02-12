@@ -74,7 +74,7 @@ sub new {
          my $class = ref($invocant) || $invocant;
          my $parent = shift;
         my $self = Scribbler::ActionTile::new($class, $parent, @_);
-        $self->action(icon => 'move_fwd', call => '', type => 'set', left => 50, right => 50, timer => 0);
+        $self->action(icon => 'move_fwd', call => '', type => 'set', left => 50, right => 50, timer => 0, trim => 0);
         $self->_tileData;
         return $self
 }
@@ -135,6 +135,8 @@ sub editor {
         $CallIndex = (grep $CanCall[$_] eq $SelfEdit->action('call'), (0 .. @CanCall - 1))[0] || 0;
         $SelfEdit->_evtTypeSpin(1);
         $SelfEdit->_update;
+		$TrimIndex = $SelfEdit->action('trim');
+		_evtTrimSlide();
         return $EditWindow
 }
 
@@ -195,7 +197,7 @@ sub _createEditWindow {
                 -width => $SLIDER_WIDTH,
                 -sliderlength => $SLIDER_LENGTH,
                 -highlightthickness => 0,
-                -showvalue => 0,
+                -showvalue => 1,
                 -length => 150,
                 -from => -127,
                 -to =>127,
@@ -382,6 +384,8 @@ sub _evtTrimSlide {
        my $numberString = sprintf("%03d", abs($TrimIndex));
        print "\n\nTrim slider: " . $TrimIndex . "\n\n";
        $TrimLabel->configure(-text => 'Trim: '. $direction . " " .  $numberString);
+		
+		$SelfEdit->action(trim => $TrimIndex);
 }
 
 sub _update {

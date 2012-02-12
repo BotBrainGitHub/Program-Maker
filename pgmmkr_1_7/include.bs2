@@ -1,3 +1,6 @@
+ 'TEST VERSION
+ '1/12/2012; Rescaled the light sensor values but it is currently a test!
+
  '12/05/2010; variables added / changed, Whisker(touch) added
  '12/08/2010; ReadLight code changed for better scaling
 
@@ -196,9 +199,20 @@ RETURN
     PAUSE 3
     RCTIME LightLeft,1,W0
 
-    W0 = W0 MAX 255
+    IF(W0 <= 500) THEN
+      LeftLight = 255 - (W0 / 6 MAX 255)
+    ELSEIF(W0 > 500 AND W0 <= 1500) THEN
+      LeftLight = 255 - (W0 / 12 MAX 255)
+    ELSEIF(W0 > 1500 AND W0 <= 4000) THEN
+      LeftLight = 255 - (W0 / 24  MAX 255)
+    ELSEIF(W0 > 4000 AND W0 <= 10000)  THEN
+      LeftLight = 255 - (W0 / 48 MAX 255)
+    ELSEIF(W0 > 10000)  THEN
+      LeftLight = 255 - (W0 / 96 MAX 255)
+    ENDIF
+
     'DEBUG HOME,CLS, "Left Raw Value = ",?W0,CR
-    LeftLight = 255 - W0
+    'LeftLight = 255 - W0
     'LeftLight = 255 - (W0 / 4 MAX 255)
     'LeftLight = 255 - ((W0 / 19) MAX 255)
 
@@ -206,9 +220,19 @@ RETURN
     PAUSE 3
     RCTIME LightRight,1,W0
 
-    W0 = W0 MAX 255
+    IF(W0 <= 500) THEN
+      RightLight = 255 - (W0 / 6 MAX 255)
+    ELSEIF(W0 > 500 AND W0 <= 1500) THEN
+      RightLight = 255 - (W0 / 12 MAX 255)
+    ELSEIF(W0 > 1500 AND W0 <= 4000) THEN
+      RightLight = 255 - (W0 / 24  MAX 255)
+    ELSEIF(W0 > 4000 AND W0 <= 10000)  THEN
+      RightLight = 255 - (W0 / 48 MAX 255)
+    ELSEIF(W0 > 10000)  THEN
+      RightLight = 255 - (W0 / 96 MAX 255)
+    ENDIF
     'DEBUG "Right Raw Value = ",?W0,CR
-    RightLight = 255 - W0
+    'RightLight = 255 - W0
     'RightLight = 255 - (W0 / 4 MAX 255)
     'RightLight = 255 - ((W0 / 19) MAX 255)
     'DEBUG ?leftlight,?rightlight
